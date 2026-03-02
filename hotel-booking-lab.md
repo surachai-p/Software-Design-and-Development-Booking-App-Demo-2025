@@ -412,6 +412,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
 > แทรกรูปภาพที่นี่
+![alt text](image.png)
 
 ---
 
@@ -459,7 +460,8 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-1.png)
+![alt text](image-2.png)
 ---
 
 ### 2.3 การทดสอบ CRUD Operations
@@ -491,6 +493,7 @@ Headers: Content-Type: application/json
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
 > แทรกรูปภาพที่นี่
+![alt text](image-3.png)
 
 ---
 
@@ -507,6 +510,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
 > แทรกรูปภาพที่นี่
+![alt text](image-4.png)
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -523,6 +527,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
 > แทรกรูปภาพที่นี่
+![alt text](image-5.png)
 
 ---
 
@@ -551,6 +556,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
 > แทรกรูปภาพที่นี่
+![alt text](image-6.png)
 
 ---
 
@@ -565,6 +571,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
 > แทรกรูปภาพที่นี่
+![alt text](image-7.png)
 
 ---
 
@@ -575,7 +582,11 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
+
 > แทรกรูปภาพที่นี่
+![alt text](image-8.png)
+![alt text](image-9.png)
+
 
 ---
 
@@ -676,6 +687,7 @@ npm run dev
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
 > แทรกรูปภาพที่นี่
+![alt text](image-10.png)
 
 ---
 
@@ -1348,6 +1360,8 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
 > แทรกรูปภาพที่นี่
+![alt text](image-12.png)
+![alt text](image-11.png)
 
 ---
 
@@ -1360,6 +1374,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
 > แทรกรูปภาพที่นี่
+![alt text](image-13.png)
 
 ---
 
@@ -1371,12 +1386,14 @@ export default App;
 4. กดปุ่ม **"ลบ"** — ยืนยันการลบข้อมูล
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
+![alt text](image-14.png)
 
 > แทรกรูปภาพที่นี่
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
 > แทรกรูปภาพที่นี่
+![alt text](image-16.png)
 
 ---
 
@@ -1388,6 +1405,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
 > แทรกรูปภาพที่นี่
+![alt text](image-15.png)
 
 ---
 
@@ -1432,18 +1450,38 @@ hotel-booking-system/
 
 ```
 เขียนคำตอบที่นี่
+
+axios เป็น lib ที่ใช้งานแทน fetch หรือการดึงข้อมูลจาก api ค่าง ๆ โดยที่ข้อดีของ axios คือเราไม่ต้องจัดการ error handing เอง และไม่ต้องตัดการ promise เอง
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
 เขียนคำตอบที่นี่
+
+เพราะเป็นการป้องกัน path ของ route ที่สำคัญเช่น /admin หรือ /Deshbord ถ้าไม่ตั้ง ProtededRoute ก็จะทำให้ไม่ว่าจะเป็นใครก็สามารถเข้า /admin ได้โดยไม่ต้องเป็น admin เป็นอะไรที่น่ากลัวมาก ๆ ครับ 
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
 เขียนคำตอบที่นี่
+
+มีความเสี่ยงอยู่ตรงที่ถ้าเครื่องเราพังเราก็จะเสีย JWT token Cอันนั้นไปเลยหรือถ้าโดน hack remote เข้าก็แตกเลยเพราะ hacker จะ
+XSS (Cross-Site Scripting) ได้เลย
+ทำให้สามารถเข้ามาดู env ของเราได้โครตง่าย
+วีธีแก้
+วิธีที่ 1: ฝากไว้บน Cloud (Centralized Secret Management)
+วิธีทำ: ใช้บริการอย่าง HashiCorp Vault, AWS Secrets Manager, หรือ Doppler เพื่อดึงค่าผ่าน API/CLI
+
+ข้อดี: ปลอดภัยสูง, ทุกคนใช้ค่าเดียวกันเสมอ, เปลี่ยนค่าเดียวอัปเดตทั้งทีม
+
+ข้อเสีย: เซตระบบยากกว่า, ต้องเสียเงิน (ถ้าใช้เยอะ), ถ้า Cloud ล่มหรือไม่มีเน็ตจะทำงานลำบาก
+
+วิธีที่ 2: แชร์ไฟล์ .env ตรงๆ (Manual Sync)
+วิธีทำ: ส่งไฟล์กันผ่าน Slack/Discord หรือใช้เครื่องมืออย่าง infisical
+
+ข้อดี: ง่าย, รวดเร็ว, ทำงานแบบ Offline ได้ 
 ```
 
 
@@ -1452,10 +1490,10 @@ hotel-booking-system/
 
 ## สิ่งที่ต้องส่ง
 
-- [ ] รูปผลการทดลองตามที่กำหนดในแต่ละขั้นตอน (แทรกในไฟล์นี้)
-- [ ] โค้ดที่แก้ไข: `server.js` (DELETE endpoint + GET `/api/users`)
-- [ ] ผลการทดสอบ Login / Logout บน Frontend พร้อมรูปภาพ
-- [ ] คำตอบคำถามท้ายใบงาน ครบทั้ง 3 ข้อ
+- [ ทำแล้ว] รูปผลการทดลองตามที่กำหนดในแต่ละขั้นตอน (แทรกในไฟล์นี้)
+- [ ทำแล้ว] โค้ดที่แก้ไข: `server.js` (DELETE endpoint + GET `/api/users`)
+- [ ทำแล้ว] ผลการทดสอบ Login / Logout บน Frontend พร้อมรูปภาพ
+- [ ทำแล้ว] คำตอบคำถามท้ายใบงาน ครบทั้ง 3 ข้อ
 
 ---
 
