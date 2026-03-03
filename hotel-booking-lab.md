@@ -412,7 +412,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
 > แทรกรูปภาพที่นี่
-
+![alt text](<images/Run-Backend Server.png>)
 ---
 
 ## การทดลองที่ 2: การทดสอบ API ด้วย Postman
@@ -459,7 +459,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
 > แทรกรูปภาพที่นี่
-
+![alt text](images/Login-Token.png)
 ---
 
 ### 2.3 การทดสอบ CRUD Operations
@@ -491,7 +491,9 @@ Headers: Content-Type: application/json
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
 > แทรกรูปภาพที่นี่
-
+![alt text](images/test-booking-1.png)
+![alt text](images/test-booking-2.png)
+![alt text](images/test-booking-3.png)
 ---
 
 #### 2.3.2 ดึงข้อมูลทั้งหมด (GET All)
@@ -509,7 +511,8 @@ Headers: Authorization: Bearer {{token}}
 > แทรกรูปภาพที่นี่
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
-
+![alt text](images/get-all-1.png)
+![alt text](images/get-all-2.png)
 ---
 
 #### 2.3.3 ดึงข้อมูลตาม ID (GET by ID)
@@ -523,7 +526,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
 > แทรกรูปภาพที่นี่
-
+![alt text](images/get-byid-1.png)
 ---
 
 #### 2.3.4 แก้ไขข้อมูลการจอง (PUT)
@@ -551,7 +554,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
 > แทรกรูปภาพที่นี่
-
+![alt text](images/put-booking.png)
 ---
 
 #### 2.3.5 ลบข้อมูลการจอง (DELETE)
@@ -565,7 +568,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
 > แทรกรูปภาพที่นี่
-
+![alt text](images/delete-booking.png)
 ---
 
 ### 🔧 งานปรับปรุงโค้ด
@@ -576,7 +579,8 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
 > แทรกรูปภาพที่นี่
-
+![alt text](images/delete-by-user.png)
+![alt text](images/get-api-user.png)
 ---
 
 ## การทดลองที่ 3: การพัฒนา Frontend ด้วย React
@@ -676,7 +680,7 @@ npm run dev
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
 > แทรกรูปภาพที่นี่
-
+![alt text](images/run-frontend.png)
 ---
 
 ### 3.2 การสร้าง Components
@@ -1348,7 +1352,8 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
 > แทรกรูปภาพที่นี่
-
+![alt text](images/form-booking-hotal.png)
+![alt text](images/final-booking.png)
 ---
 
 #### 3.3.2 ทดสอบการ Login ระบบ Admin
@@ -1360,7 +1365,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
 > แทรกรูปภาพที่นี่
-
+![alt text](images/addmin-hotel.png)
 ---
 
 #### 3.3.3 ทดสอบการจัดการรายการจอง
@@ -1372,12 +1377,13 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่ 
+> ![alt text](images/edit-booking1.png)
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
 > แทรกรูปภาพที่นี่
-
+![alt text](images/edit-booking2.png)
 ---
 
 #### 3.3.4 ทดสอบการ Logout และ Protected Route
@@ -1388,7 +1394,8 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
 > แทรกรูปภาพที่นี่
-
+![alt text](images/login-addmin.png)
+![alt text](<images/test-Protected Route-addmin-login.png>)
 ---
 
 ## สรุปสถาปัตยกรรมระบบ
@@ -1431,19 +1438,44 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+axios คือไลบรารีสำหรับส่ง HTTP request จากฝั่ง Client (Frontend) ไปยัง Server เช่น การเรียก API แบบ GET, POST, PUT, DELETE เป็นต้น โดยช่วยให้เขียนโค้ดสั้น อ่านง่าย และจัดการข้อมูลได้สะดวกขึ้น
+
+ความแตกต่างระหว่าง axios กับ fetch มีดังนี้
+
+1. การแปลง JSON  
+- fetch ต้องใช้ .json() เพิ่มเองเพื่อแปลงข้อมูล  
+- axios แปลง response เป็น JSON ให้อัตโนมัติ
+
+2. การจัดการ Error  
+- fetch จะไม่ถือว่า status 4xx หรือ 5xx เป็น error ต้องเช็คเอง  
+- axios จะ throw error ทันทีเมื่อ status ไม่ใช่ 2xx
+
+3. การตั้งค่า Header  
+- axios ตั้งค่า header เช่น Authorization ได้ง่ายกว่า และสามารถตั้ง default ได้
+
+4. การใช้งานโดยรวม  
+- fetch เป็นฟังก์ชันพื้นฐานของ JavaScript (ไม่ต้องติดตั้ง)  
+- axios เป็นไลบรารีภายนอก ต้องติดตั้งเพิ่ม แต่มีความสะดวกมากกว่า
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+ProtectedRoute ต้องตรวจสอบ loading state เพราะในบางกรณีการตรวจสอบ token หรือข้อมูลผู้ใช้ต้องใช้เวลา เช่น ดึงข้อมูลจาก localStorage หรือเรียก API เพื่อตรวจสอบสิทธิ์
+
+ถ้าไม่ตรวจสอบ loading ก่อน ระบบอาจ redirect ไปหน้า login ทันที ทั้งที่ผู้ใช้ยังมีสิทธิ์อยู่ ทำให้เกิดปัญหาเด้งหน้า (flash redirect) หรือ redirect ผิดพลาด
+
+ดังนั้นการเช็ค loading จะช่วยให้รอจนกว่าการตรวจสอบสิทธิ์เสร็จสมบูรณ์ก่อนตัดสินใจว่าจะให้เข้าใช้งานหรือ redirect ออกไป
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+การเก็บ JWT token ใน localStorage มีความเสี่ยงด้านความปลอดภัย โดยเฉพาะการโจมตีแบบ XSS (Cross-Site Scripting) เพราะหากมีสคริปต์อันตรายแทรกเข้ามาในหน้าเว็บ มันสามารถอ่านค่า token จาก localStorage ได้ทันที
+
+ถ้า token ถูกขโมย ผู้ไม่หวังดีสามารถนำไปใช้แอบอ้างตัวตนของผู้ใช้ได้
+
+วิธีที่ปลอดภัยกว่าคือการเก็บ token ใน HttpOnly Cookie ซึ่งไม่สามารถถูกเข้าถึงผ่าน JavaScript ได้ ทำให้ลดความเสี่ยงจาก XSS นอกจากนี้ควรใช้ HTTPS และกำหนดค่า Secure และ SameSite เพื่อเพิ่มความปลอดภัย
 ```
 
 
