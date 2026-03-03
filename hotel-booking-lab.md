@@ -413,7 +413,7 @@ Server running on port 3001
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image-1.png)
 
 ## การทดลองที่ 2: การทดสอบ API ด้วย Postman
 
@@ -460,7 +460,7 @@ Server running on port 3001
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image-2.png)
 
 ### 2.3 การทดสอบ CRUD Operations
 
@@ -490,7 +490,7 @@ Headers: Content-Type: application/json
 
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
-> แทรกรูปภาพที่นี่
+>![alt text](image.png)
 
 ---
 
@@ -507,7 +507,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-3.png)
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
 ---
@@ -524,7 +524,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image-4.png)
 
 #### 2.3.4 แก้ไขข้อมูลการจอง (PUT)
 
@@ -552,7 +552,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image-5.png)
 
 #### 2.3.5 ลบข้อมูลการจอง (DELETE)
 
@@ -566,7 +566,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image-6.png)
 
 ### 🔧 งานปรับปรุงโค้ด
 
@@ -577,7 +577,8 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image-7.png)
+![alt text](image-8.png)
 
 ## การทดลองที่ 3: การพัฒนา Frontend ด้วย React
 
@@ -677,7 +678,7 @@ npm run dev
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image-9.png)
 
 ### 3.2 การสร้าง Components
 
@@ -1349,7 +1350,7 @@ export default App;
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image-10.png)![alt text](image-11.png)
 
 #### 3.3.2 ทดสอบการ Login ระบบ Admin
 
@@ -1361,7 +1362,7 @@ export default App;
 
 > แทรกรูปภาพที่นี่
 
----
+---!![alt text](image-13.png)
 
 #### 3.3.3 ทดสอบการจัดการรายการจอง
 
@@ -1372,11 +1373,11 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่![alt text](image-12.png)
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่![alt text](image-14.png)
 
 ---
 
@@ -1389,7 +1390,7 @@ export default App;
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image-15.png)
 
 ## สรุปสถาปัตยกรรมระบบ
 
@@ -1432,19 +1433,58 @@ hotel-booking-system/
 
 ```
 เขียนคำตอบที่นี่
-```
+```axios คือไลบรารีสำหรับส่ง HTTP request (เช่น GET, POST, PUT, DELETE) 
+จากฝั่ง Client ไปยัง Server ใช้งานง่ายและมีฟังก์ชันช่วยเหลือหลายอย่าง
+
+ความแตกต่างระหว่าง axios และ fetch มีดังนี้
+
+1) axios แปลงข้อมูล JSON ให้อัตโนมัติ 
+   ส่วน fetch ต้องใช้ .json() เอง
+
+2) axios จะจัดการ error เมื่อ status code ไม่ใช่ 2xx ให้อัตโนมัติ
+   ส่วน fetch จะไม่ throw error ถ้าเป็น 404 หรือ 500 
+   ต้องเช็ค response.ok เอง
+
+3) axios รองรับ timeout และ interceptors ได้ง่าย
+   ส่วน fetch ต้องเขียนเพิ่มเอง
+
+4) axios ทำงานได้ดีทั้ง Browser และ Node.js
+   ส่วน fetch เดิมมีใน Browser (Node.js เพิ่งรองรับในเวอร์ชันใหม่)
+
+สรุป: axios ใช้งานสะดวกกว่าและมีฟีเจอร์ครบกว่า 
+แต่ fetch เป็น API มาตรฐานของ JavaScript ที่ไม่ต้องติดตั้งเพิ่ม
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
 เขียนคำตอบที่นี่
-```
+```ProtectedRoute ต้องตรวจสอบ loading state เพราะในช่วงแรกของการโหลดหน้าเว็บ 
+ระบบยังไม่รู้ว่าผู้ใช้ login อยู่หรือไม่ (กำลังตรวจสอบ token หรือดึงข้อมูลผู้ใช้จาก server)
+
+ถ้าไม่ตรวจสอบ loading ก่อน อาจเกิดปัญหา เช่น
+- ระบบ redirect ไปหน้า login ทั้งที่ผู้ใช้มี token อยู่
+- หน้าเว็บกระพริบ (flash) เพราะ redirect ไปมา
+- ผู้ใช้เห็นหน้า error ชั่วคราวก่อนข้อมูลโหลดเสร็จ
+
+ดังนั้นการเช็ค loading จะช่วยให้ระบบรอจนกว่าการตรวจสอบสิทธิ์เสร็จสมบูรณ์ก่อน
+แล้วจึงตัดสินใจว่าจะให้เข้าใช้งานหรือ redirect
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
 เขียนคำตอบที่นี่
-```
+```localStorage มีความเสี่ยงด้านความปลอดภัย เพราะหากเว็บไซต์มีช่องโหว่ XSS (Cross-Site Scripting) 
+ผู้ไม่หวังดีสามารถเขียน script เพื่อขโมย JWT token จาก localStorage ได้
+
+เมื่อ token ถูกขโมย ผู้โจมตีสามารถนำไปใช้ปลอมตัวเป็นผู้ใช้ได้
+
+วิธีที่ปลอดภัยกว่าคือ
+- เก็บ JWT ใน HttpOnly Cookie 
+  ซึ่ง JavaScript ไม่สามารถเข้าถึงได้
+- ใช้ Secure และ SameSite Cookie เพื่อลดความเสี่ยงจาก CSRF
+
+สรุป: localStorage ใช้งานง่ายแต่มีความเสี่ยง 
+การใช้ HttpOnly Cookie จะปลอดภัยมากกว่าในระบบจริง
 
 
 
