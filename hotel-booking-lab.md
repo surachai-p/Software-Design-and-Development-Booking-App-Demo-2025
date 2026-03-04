@@ -411,7 +411,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j1.png)
 
 ---
 
@@ -458,7 +458,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j2.png)
 
 ---
 
@@ -490,7 +490,9 @@ Headers: Content-Type: application/json
 
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j3.png)
+> ---
+> ![alt text](hotel-booking-system/photos/j4.png)
 
 ---
 
@@ -506,7 +508,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j5.png)
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -522,7 +524,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j6.png)
 
 ---
 
@@ -550,7 +552,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j7.png)
 
 ---
 
@@ -564,7 +566,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j8.png)
 
 ---
 
@@ -575,7 +577,9 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j10.png)
+> ---
+> ![alt text](hotel-booking-system/photos/j9.png)
 
 ---
 
@@ -675,7 +679,7 @@ npm run dev
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j11.png)
 
 ---
 
