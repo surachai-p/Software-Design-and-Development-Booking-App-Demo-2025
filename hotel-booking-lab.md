@@ -1351,7 +1351,9 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j14.png)
+> ---
+> ![alt text](hotel-booking-system/photos/j15.png)
 
 ---
 
@@ -1363,7 +1365,9 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j13.png)
+> ---
+> ![alt text](hotel-booking-system/photos/j12.png)
 
 ---
 
@@ -1376,11 +1380,13 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j16.png)
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j17.png)
+> ---
+> ![alt text](hotel-booking-system/photos/j18.png)
 
 ---
 
@@ -1391,7 +1397,11 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
-> แทรกรูปภาพที่นี่
+> ![alt text](hotel-booking-system/photos/j19.png)
+> ---
+> ![alt text](hotel-booking-system/photos/j20.png)
+> ---
+> ![alt text](hotel-booking-system/photos/j21.png)
 
 ---
 
