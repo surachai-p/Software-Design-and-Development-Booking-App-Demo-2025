@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>เข้าสู่ระบบ — Hotel Booking</title>
+<link rel="stylesheet" href="shared.css" />
+<style>
+  /* ── Login-specific styles ── */
+  .login-bg {
+    min-height: calc(100vh - 62px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #2c2c2c 0%, #3d3d3d 60%, #2c2c2c 100%);
+    position: relative; overflow: hidden;
+  }
+  .login-bg::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 65% 40%, rgba(201,168,76,.18), transparent 60%);
+  }
+  .login-card {
+    background: var(--warm); border: 1px solid var(--border);
+    border-radius: 12px; padding: 2.75rem; width: 100%; max-width: 420px;
+    box-shadow: 0 16px 60px rgba(0,0,0,.35);
+    position: relative; animation: fadeIn .4s ease;
+  }
+  .login-logo { text-align: center; font-size: 2.5rem; margin-bottom: .5rem; }
+  .login-title {
+    font-family: 'Playfair Display', serif; font-size: 1.75rem;
+    text-align: center; margin-bottom: .3rem; color: var(--char);
+  }
+  .login-sub { color: var(--slate-l); text-align: center; font-size: .85rem; margin-bottom: 2rem; }
+  .login-divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
+  .login-hint {
+    text-align: center; color: var(--slate-l); font-size: .8rem;
+    margin-top: 1.25rem; padding: .75rem; background: var(--cream);
+    border-radius: 6px; border: 1px solid var(--border);
+  }
+  .login-hint code { background: #e8e0d0; padding: .1rem .4rem; border-radius: 3px; font-size: .8rem; color: var(--char); }
+  .login-footer { text-align: center; margin-top: 1.5rem; font-size: .8rem; color: var(--slate-l); }
+  .login-footer a { color: var(--gold-d); text-decoration: none; font-weight: 600; }
+  .login-footer a:hover { text-decoration: underline; }
+  .input-wrap { position: relative; }
+  .input-wrap input { padding-right: 2.5rem; }
+  .eye-btn {
+    position: absolute; right: .75rem; top: 50%; transform: translateY(-50%);
+    background: none; border: none; cursor: pointer; color: var(--slate-l);
+    font-size: 1rem; padding: 0; line-height: 1;
+  }
+  .eye-btn:hover { color: var(--gold); }
+  #login-btn { margin-top: .5rem; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="brand" href="index.html">🏨 The Grand Booking</a>
+  <div class="nav-links">
+    <a class="nav-btn" href="index.html">หน้าแรก</a>
+    <a class="nav-btn" href="index.html#booking">จองห้องพัก</a>
+    <a class="nav-btn active cta" href="login.html">เข้าสู่ระบบ</a>
+  </div>
+</nav>
+
+<!-- LOGIN SECTION -->
+<div class="login-bg">
+  <div class="login-card">
+    <div class="login-logo">🔐</div>
+    <div class="login-title">เข้าสู่ระบบ</div>
+    <div class="login-sub">Admin Panel · Hotel Booking System</div>
+
+    <div class="alert alert-err" id="login-err"></div>
+    <div class="alert alert-ok"  id="login-ok"></div>
+
+    <div class="fg">
+      <label for="l-user">ชื่อผู้ใช้</label>
+      <input type="text" id="l-user" placeholder="admin" autocomplete="username" />
+    </div>
+    <div class="fg">
+      <label for="l-pass">รหัสผ่าน</label>
+      <div class="input-wrap">
+        <input type="password" id="l-pass" placeholder="••••••••" autocomplete="current-password" />
+        <button class="eye-btn" onclick="togglePass()" title="แสดง/ซ่อนรหัสผ่าน">👁</button>
+      </div>
+    </div>
+
+    <button class="btn btn-gold btn-full" id="login-btn" onclick="doLogin()">เข้าสู่ระบบ</button>
+
+    <hr class="login-divider" />
+
+    <div class="login-hint">
+      🔑 ใช้ได้เลย: <code>admin</code> / <code>admin123</code>
+    </div>
+    <div class="login-footer">
+      ยังไม่มีบัญชี? <a href="index.html">กลับหน้าหลัก</a>
+    </div>
+  </div>
+</div>
+
+<script src="shared.js"></script>
+<script>
+  // ── ถ้า login แล้ว redirect ไป admin ── 
+  if (loadSession()) window.location.href = 'admin.html';
+
+  function togglePass() {
+    const inp = document.getElementById('l-pass');
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+  }
+
+  function doLogin() {
+    const u = val('l-user'), p = val('l-pass');
+    const btn = document.getElementById('login-btn');
+    showAlert('login-err', '');
+
+    if (!u || !p) return showAlert('login-err', '⚠️ กรุณากรอกชื่อผู้ใช้และรหัสผ่าน');
+
+    btn.textContent = 'กำลังตรวจสอบ...';
+    btn.disabled = true;
+
+    // Simulate async (จำลอง JWT verify)
+    setTimeout(() => {
+      const found = USERS.find(x => x.username === u && x.password === p);
+      if (found) {
+        saveSession({ id: found.id, username: found.username, role: found.role });
+        showAlert('login-ok', '✅ เข้าสู่ระบบสำเร็จ! กำลังนำทาง...', 'ok');
+        setTimeout(() => window.location.href = 'admin.html', 700);
+      } else {
+        showAlert('login-err', '⚠️ ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+        btn.textContent = 'เข้าสู่ระบบ';
+        btn.disabled = false;
+      }
+    }, 600);
+  }
+
+  // Enter key to login
+  document.getElementById('l-pass').addEventListener('keydown', e => {
+    if (e.key === 'Enter') doLogin();
+  });
+</script>
+</body>
+</html>
