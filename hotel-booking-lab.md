@@ -412,7 +412,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image.png)
 ---
 
 ## การทดลองที่ 2: การทดสอบ API ด้วย Postman
@@ -459,7 +459,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-1.png)
 ---
 
 ### 2.3 การทดสอบ CRUD Operations
@@ -491,7 +491,7 @@ Headers: Content-Type: application/json
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-2.png)
 ---
 
 #### 2.3.2 ดึงข้อมูลทั้งหมด (GET All)
@@ -507,6 +507,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
 > แทรกรูปภาพที่นี่
+![alt text](image-3.png)
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -516,14 +517,14 @@ Headers: Authorization: Bearer {{token}}
 
 ```
 Method : GET
-URL    : {{baseUrl}}/api/bookings/1
+URL    : {{baseUrl}}/api/bookings/2
 Headers: Authorization: Bearer {{token}}
 ```
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-4.png)
 ---
 
 #### 2.3.4 แก้ไขข้อมูลการจอง (PUT)
@@ -551,7 +552,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-5.png)
 ---
 
 #### 2.3.5 ลบข้อมูลการจอง (DELETE)
@@ -565,7 +566,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-6.png)
 ---
 
 ### 🔧 งานปรับปรุงโค้ด
@@ -576,7 +577,8 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-7.png)
+![alt text](image-8.png)
 ---
 
 ## การทดลองที่ 3: การพัฒนา Frontend ด้วย React
@@ -676,7 +678,7 @@ npm run dev
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-9.png)
 ---
 
 ### 3.2 การสร้าง Components
@@ -1348,7 +1350,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-10.png)
 ---
 
 #### 3.3.2 ทดสอบการ Login ระบบ Admin
@@ -1360,7 +1362,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-11.png)
 ---
 
 #### 3.3.3 ทดสอบการจัดการรายการจอง
@@ -1373,11 +1375,12 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-12.png)
+![alt text](image-13.png)
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
-
 > แทรกรูปภาพที่นี่
-
+![alt text](image-14.png)
+![alt text](image-15.png)
 ---
 
 #### 3.3.4 ทดสอบการ Logout และ Protected Route
@@ -1388,7 +1391,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-16.png)
 ---
 
 ## สรุปสถาปัตยกรรมระบบ
@@ -1432,19 +1435,21 @@ hotel-booking-system/
 
 ```
 เขียนคำตอบที่นี่
-```
+```ความแตกต่างคือ axios จะใช้งานง่ายกว่า เพราะช่วยจัดการข้อมูล JSON และ error ให้บางส่วน ส่วน fetch เป็นคำสั่งของ JavaScript ที่มีอยู่แล้ว แต่ต้องเขียนโค้ดเพิ่มเพื่อจัดการข้อมูลเอง
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
 เขียนคำตอบที่นี่
-```
+```เพราะตอนที่หน้าเว็บกำลังโหลด ระบบยังตรวจสอบสถานะผู้ใช้ไม่เสร็จ ถ้าไม่เช็ค loading ก่อน อาจทำให้ระบบคิดว่าผู้ใช้ยังไม่ได้ login แล้วส่งไปหน้า login ทั้งที่จริง ๆ login อยู่แล้ว
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
 เขียนคำตอบที่นี่
-```
+```การเก็บ JWT token ใน localStorage มีความเสี่ยง เพราะถ้าเว็บไซต์มีช่องโหว่ คนอื่นอาจเข้าถึง token ได้ แล้วนำไปใช้แทนเจ้าของบัญชี
+
+วิธีที่ปลอดภัยกว่าคือเก็บ token ใน cookie แบบ HttpOnly เพราะ JavaScript จะไม่สามารถเข้าถึงได้ ทำให้ปลอดภัยมากกว่า
 
 
 
