@@ -411,7 +411,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
-> แทรกรูปภาพที่นี่
+> ![runserver](image/runserver.png)
 
 ---
 
@@ -458,7 +458,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
-> แทรกรูปภาพที่นี่
+> ![testlogin](image/testlogin.png)
 
 ---
 
@@ -490,7 +490,9 @@ Headers: Content-Type: application/json
 
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
-> แทรกรูปภาพที่นี่
+> ![CRUD1](image/CRUD1.png)
+![CRUD2](image/CRUD2.png)
+![CRUD3](image/CRUD3.png)
 
 ---
 
@@ -508,7 +510,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
-> ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
+> ![getAll](image/getAll.png)
 
 ---
 
@@ -522,7 +524,8 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
-> แทรกรูปภาพที่นี่
+> ![getbyID1](image/getbyID1.png)
+![getbyID2](image/getbyID2.png)
 
 ---
 
@@ -550,7 +553,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
-> แทรกรูปภาพที่นี่
+> ![updateBooking](image/updateBooking.png)
 
 ---
 
@@ -564,7 +567,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
-> แทรกรูปภาพที่นี่
+> ![deleteBooking](image/updateBooking.png)
 
 ---
 
