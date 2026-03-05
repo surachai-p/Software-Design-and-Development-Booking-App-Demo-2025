@@ -549,7 +549,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
-> ![alt text](<ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment.png>)
+> ![alt text](image-5.png)
 
 ---
 
@@ -563,7 +563,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
-> ![ใส่รูป]
+> ![alt text](image-6.png)
 
 ---
 
@@ -574,7 +574,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
-> ![ใส่รูป]
+>![alt text](image-7.png)
 
 ---
 
