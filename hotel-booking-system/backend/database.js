@@ -1,4 +1,5 @@
 const sqlite3 = require("sqlite3").verbose();
+const bcrypt = require("bcryptjs");
 
 // สร้างหรือเชื่อมต่อ database
 const db = new sqlite3.Database("./hotel.db", (err) => {
@@ -32,6 +33,14 @@ const db = new sqlite3.Database("./hotel.db", (err) => {
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
       )
     `);
+
+    // สร้าง admin account เริ่มต้น
+    const adminPassword = bcrypt.hashSync("admin123", 10);
+
+    db.run(
+      `INSERT OR IGNORE INTO users (username, password, role) VALUES (?, ?, ?)`,
+      ["admin", adminPassword, "admin"]
+    );
   }
 });
 

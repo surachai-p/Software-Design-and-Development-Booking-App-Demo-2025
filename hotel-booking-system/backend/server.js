@@ -1,4 +1,5 @@
 console.log("SERVER STARTING...");
+
 // ==========================
 // 1) Import Modules
 // ==========================
@@ -16,14 +17,14 @@ const PORT = 3001;
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
 app.use(cors());
-app.use(express.json()); // ไม่ต้องใช้ body-parser
+app.use(express.json());
 
 // ==========================
 // 3) Middleware: ตรวจสอบ JWT
 // ==========================
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+  const token = authHeader && authHeader.split(' ')[1];
 
   if (!token) {
     return res.status(401).json({ error: 'กรุณาเข้าสู่ระบบก่อน' });
@@ -53,16 +54,15 @@ app.post('/api/login', (req, res) => {
     [username],
     async (err, user) => {
       if (err) return res.status(500).json({ error: err.message });
-      if (!user)
-        return res
-          .status(401)
-          .json({ error: 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง' });
+
+      if (!user) {
+        return res.status(401).json({ error: 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง' });
+      }
 
       const validPassword = await bcrypt.compare(password, user.password);
+
       if (!validPassword) {
-        return res
-          .status(401)
-          .json({ error: 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง' });
+        return res.status(401).json({ error: 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง' });
       }
 
       const token = jwt.sign(
@@ -89,8 +89,7 @@ app.post('/api/login', (req, res) => {
 
 // 🔹 สร้างการจอง (ไม่ต้อง login)
 app.post('/api/bookings', (req, res) => {
-  const { fullname, email, phone, checkin, checkout, roomtype, guests } =
-    req.body;
+  const { fullname, email, phone, checkin, checkout, roomtype, guests } = req.body;
 
   const sql = `
     INSERT INTO bookings 
@@ -135,8 +134,7 @@ app.get('/api/bookings/:id', authenticateToken, (req, res) => {
     [req.params.id],
     (err, row) => {
       if (err) return res.status(400).json({ error: err.message });
-      if (!row)
-        return res.status(404).json({ error: 'ไม่พบข้อมูลการจอง' });
+      if (!row) return res.status(404).json({ error: 'ไม่พบข้อมูลการจอง' });
       res.json(row);
     }
   );
@@ -177,8 +175,10 @@ app.put('/api/bookings/:id', authenticateToken, (req, res) => {
     ],
     function (err) {
       if (err) return res.status(400).json({ error: err.message });
-      if (this.changes === 0)
+
+      if (this.changes === 0) {
         return res.status(404).json({ error: 'ไม่พบข้อมูลการจอง' });
+      }
 
       db.get(
         'SELECT * FROM bookings WHERE id = ?',
@@ -199,19 +199,34 @@ app.delete('/api/bookings/:id', authenticateToken, (req, res) => {
     [req.params.id],
     function (err) {
       if (err) return res.status(400).json({ error: err.message });
-      if (this.changes === 0)
+
+      if (this.changes === 0) {
         return res.status(404).json({ error: 'ไม่พบข้อมูลการจอง' });
+      }
 
       res.json({
-        message: 'ลบข้อมูลสำเร็จ',
-        id: req.params.id,
+        status: "ลบข้อมูลสำเร็จโดย ณภัทร สิงห์ตุ้ย"
       });
     }
   );
 });
 
 // ==========================
-// 6) Start Server
+// 6) GET Users (ไม่แสดง password)
+// ==========================
+app.get('/api/users', authenticateToken, (req, res) => {
+  db.all(
+    'SELECT id, username, role FROM users',
+    [],
+    (err, rows) => {
+      if (err) return res.status(400).json({ error: err.message });
+      res.json(rows);
+    }
+  );
+});
+
+// ==========================
+// 7) Start Server
 // ==========================
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
