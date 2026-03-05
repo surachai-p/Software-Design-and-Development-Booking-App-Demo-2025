@@ -411,7 +411,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
-> แทรกรูปภาพที่นี่
+> ![ผลการทดลอง](imgl/ex1.png)
 
 ---
 
@@ -458,8 +458,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
-> แทรกรูปภาพที่นี่
-
+> ![test request](imgl/ex2.png)
 ---
 
 ### 2.3 การทดสอบ CRUD Operations
@@ -490,8 +489,9 @@ Headers: Content-Type: application/json
 
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
-> แทรกรูปภาพที่นี่
-
+> ![Booking](imgl/ex3.png)
+> ![Booking2](imgl/ex3-2.png)
+> ![Booking3](imgl/ex3-3.png)
 ---
 
 #### 2.3.2 ดึงข้อมูลทั้งหมด (GET All)
@@ -506,7 +506,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
-> แทรกรูปภาพที่นี่
+> ![Get All Booking Detail](imgl/ex4.png)
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -522,7 +522,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
-> แทรกรูปภาพที่นี่
+> ![Get Booking Detail By ID](imgl/ex5.png)
 
 ---
 
@@ -550,7 +550,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
-> แทรกรูปภาพที่นี่
+> ![Update Detail Database](imgl/ex6.png)
 
 ---
 
@@ -564,7 +564,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
-> แทรกรูปภาพที่นี่
+> ![Delete Booking](imgl/ex7.png)
 
 ---
 
@@ -575,8 +575,28 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
-> แทรกรูปภาพที่นี่
+> ![Delete With Name On](imgl/ex8-2.png)
+```javascript
+  // DELETE /api/bookings/:id — ลบการจอง (ต้อง login)
+app.delete('/api/bookings/:id', authenticateToken, (req, res) => {
+  db.run('DELETE FROM bookings WHERE id = ?', [req.params.id], function(err) {
+    if (err)             return res.status(400).json({ error: err.message });
+    if (this.changes === 0) return res.status(404).json({ error: 'ไม่พบข้อมูลการจอง' });
+    res.json({ message: 'ลบข้อมูลสำเร็จ โดย ภูผาสุข', id: req.params.id });
+  });
+});
+```
 
+>![Add Endpoint Get /api/users](imgl/ex8.png)
+```javascript
+app.get('/api/users', authenticateToken, (req, res) => {
+  db.all('SELECT id , username ,role, created_at FROM users WHERE id = ?', [req.user.id], (err, row) => {
+    if (err)  return res.status(400).json({ error: err.message });
+    if (!row) return res.status(404).json({ error: 'ไม่พบข้อมูลผู้ใช้' });
+    res.json(row);
+  });
+});
+```
 ---
 
 ## การทดลองที่ 3: การพัฒนา Frontend ด้วย React
@@ -675,7 +695,7 @@ npm run dev
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
-> แทรกรูปภาพที่นี่
+>![test run](imgl/ex9.png) 
 
 ---
 
@@ -1347,7 +1367,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
-> แทรกรูปภาพที่นี่
+> ![Lab3.3.1](imgl/lab3-3-1.png)
 
 ---
 
@@ -1359,7 +1379,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
-> แทรกรูปภาพที่นี่
+> ![Lab3.3.2](imgl/lab3-3-2.png)
 
 ---
 
@@ -1372,11 +1392,11 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
-> แทรกรูปภาพที่นี่
+> ![Lab3.3.3 - 1](imgl/lab3-3-3--1.png)
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
-> แทรกรูปภาพที่นี่
+> ![Lab3.3.3 - 2](imgl/lab3-3-3--2.png)
 
 ---
 
@@ -1387,7 +1407,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
-> แทรกรูปภาพที่นี่
+> ![lab3.3.4](imgl/lab3-3-4.png)
 
 ---
 
@@ -1431,19 +1451,33 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+axios เป็น Libraryภายนอก ใช้ส่งHTTP Request เพื่อรับส่งข้อมุลกับ Server
+ส่วน fetch API เป็นฟังก์ชันที่มากับตัว Browserอยู่แล้ว
+
+โดย axios แปลงข้อมูลเป็น JSON ให้ทันที แต่ fetch ต้องสั่ง .json() เอง และ axios มีระบบInterceptorsมาให้
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+เพราะ เมื่อระบบทำงาน ระบบยังไม่ทราบว่าผู้ใช้loginอยู่หรือไม่ ต้องรอระบบในการตรวจสอบให้เสร้จก่อน ค่อยตัดสินใจให้redirectไปไหน
+
+ถ้าไม่เช็คก่อน อาจทำให้เกิดการredirectไปหน้า login ผิดพลาด
+ประสบการณ์ในการใช้งานแย่ loginอยู่แล้ว แต่ต้องไปloginใหม่
+ทำให้รู้สึกว่าเว็บช้า หรือมีบัค
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+เสี่ยงต่อการโจมตีแบบ XSS
+หากเว็บไซต์มีช่องโหว่ XSS attacker สามารถรัน JavaScript บนหน้าเว็บได้ และเข้าถึง localStorage ได้ทันที
+attacker สามารถ ขโมย JWT token
+ใช้ token นั้น ปลอมตัวเป็นผู้ใช้
+
+วิธีที่ปลอดภัยกว่า
+1. ใช้ HttpOnly Cookie
+2. เก็บ Access Token ใน Memory + Refresh Token ใน Cookie
 ```
 
 
