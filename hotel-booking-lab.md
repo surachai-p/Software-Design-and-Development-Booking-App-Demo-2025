@@ -686,6 +686,7 @@ npm run dev
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
 > แทรกรูปภาพที่นี่
+<img width="1910" height="1031" alt="image" src="https://github.com/user-attachments/assets/6c6ca9cc-f198-4bef-8ca5-143eb6b89f6e" />
 
 ---
 
@@ -1358,6 +1359,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
 > แทรกรูปภาพที่นี่
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/5ccab657-af8d-4f38-8656-9cde1be3e20e" />
 
 ---
 
@@ -1370,6 +1372,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
 > แทรกรูปภาพที่นี่
+<img width="1878" height="1068" alt="image" src="https://github.com/user-attachments/assets/2353a2c6-9d53-4d0f-9dbd-02e89acd86f2" />
 
 ---
 
@@ -1441,19 +1444,23 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+axios คือ library ของ JavaScript ที่ใช้สำหรับส่ง HTTP request ไปยัง server เช่น GET, POST, PUT และ DELETE เพื่อดึงหรือส่งข้อมูลระหว่าง frontend และ backend
+
+ความแตกต่างระหว่าง axios กับ fetch คือ axios เป็น library ที่ติดตั้งเพิ่มและใช้งานง่ายกว่า โดยสามารถแปลงข้อมูล JSON อัตโนมัติ จัดการ error ได้ง่าย และมีการตั้งค่า header หรือ base URL ได้สะดวก ส่วน fetch เป็นฟังก์ชันที่มีอยู่ใน JavaScript อยู่แล้ว แต่ต้องเขียนโค้ดจัดการ response และ error เพิ่มเติมด้วยตนเอง
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+ProtectedRoute ต้องตรวจสอบ loading state ก่อน เพราะในช่วงที่แอปกำลังโหลดข้อมูลผู้ใช้จาก localStorage ค่าของ user อาจยังเป็น null ชั่วคราว หากไม่ตรวจสอบ loading state ระบบจะคิดว่าผู้ใช้ยังไม่ได้ login และ redirect ไปหน้า login ทันที ทั้งที่ผู้ใช้มี token อยู่แล้ว ทำให้เกิดการ redirect ผิดพลาด
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+การเก็บ JWT token ใน localStorage มีความเสี่ยงต่อการถูกโจมตีแบบ Cross-Site Scripting (XSS) เพราะ JavaScript สามารถเข้าถึง localStorage ได้ หากมี script อันตรายถูกฝังในเว็บไซต์ อาจทำให้ token ถูกขโมยได้
+
+วิธีที่ปลอดภัยกว่าคือการเก็บ token ใน HttpOnly Cookie ซึ่งไม่สามารถเข้าถึงผ่าน JavaScript ได้ ทำให้ลดความเสี่ยงจากการโจมตี XSS และช่วยเพิ่มความปลอดภัยของระบบ authentication
 ```
 
 
