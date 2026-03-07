@@ -412,7 +412,8 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
 > แทรกรูปภาพที่นี่
-![alt text](image.png)
+<img width="1537" height="262" alt="image" src="https://github.com/user-attachments/assets/c2618f93-1444-4bd6-a29d-d4b98b4958b0" />
+
 ---
 
 ## การทดลองที่ 2: การทดสอบ API ด้วย Postman
@@ -491,6 +492,7 @@ Headers: Content-Type: application/json
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
 > แทรกรูปภาพที่นี่
+<img width="678" height="624" alt="สกรีนช็อต 2026-03-07 154016" src="https://github.com/user-attachments/assets/51c8194f-ceb0-4690-85f0-5b7449632e83" />
 
 ---
 
