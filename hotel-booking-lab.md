@@ -411,7 +411,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
-> แทรกรูปภาพที่นี่
+![> แทรกรูปภาพที่นี่](images/Run-Backend_Server.png)
 
 ---
 
@@ -458,7 +458,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
-> แทรกรูปภาพที่นี่
+![> แทรกรูปภาพที่นี่](images/Post-Loging-Token.png)
 
 ---
 
@@ -490,7 +490,9 @@ Headers: Content-Type: application/json
 
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
-> แทรกรูปภาพที่นี่
+![> แทรกรูปภาพที่นี่](images/Post-Loging-No_Token1.png)
+![alt text](images/Post-Loging-No_Token2.png)
+![alt text](images/Post-Loging-No_Token3.png)
 
 ---
 
@@ -506,7 +508,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
-> แทรกรูปภาพที่นี่
+![> แทรกรูปภาพที่นี่](images/Get-All-Booking.png)
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -522,7 +524,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
-> แทรกรูปภาพที่นี่
+![> แทรกรูปภาพที่นี่](images/Get-ID-Booking.png)
 
 ---
 
@@ -550,7 +552,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
-> แทรกรูปภาพที่นี่
+![> แทรกรูปภาพที่นี่](images/Put-ID-Booking.png)
 
 ---
 
@@ -564,7 +566,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
-> แทรกรูปภาพที่นี่
+![> แทรกรูปภาพที่นี่](images/Delete-ID-Booking.png)
 
 ---
 
@@ -575,8 +577,8 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
-> แทรกรูปภาพที่นี่
-
+![> แทรกรูปภาพที่นี่](images/Delete-ID-Booking_with_Custom_status.png)
+![alt text](images/Get-All-User.png)
 ---
 
 ## การทดลองที่ 3: การพัฒนา Frontend ด้วย React
@@ -675,8 +677,8 @@ npm run dev
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
-> แทรกรูปภาพที่นี่
-
+![> แทรกรูปภาพที่นี่](images/Start-Frontend.png)
+![alt text](images/Default-Starter-Page.png)
 ---
 
 ### 3.2 การสร้าง Components
@@ -1347,8 +1349,8 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
-> แทรกรูปภาพที่นี่
-
+![> แทรกรูปภาพที่นี่](images/Booking-Form1.png)
+![alt text](images/Booking-Form2.png)
 ---
 
 #### 3.3.2 ทดสอบการ Login ระบบ Admin
@@ -1359,8 +1361,8 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
-> แทรกรูปภาพที่นี่
-
+![> แทรกรูปภาพที่นี่](images/Page-Login.png)
+![alt text](images/Page-AdminDashboard.png)
 ---
 
 #### 3.3.3 ทดสอบการจัดการรายการจอง
@@ -1372,11 +1374,11 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
-> แทรกรูปภาพที่นี่
+![> แทรกรูปภาพที่นี่](images/Page-Booking-list.png)
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
-> แทรกรูปภาพที่นี่
+![> แทรกรูปภาพที่นี่](images/Page-Booking-edit.png)
 
 ---
 
@@ -1387,8 +1389,8 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
-> แทรกรูปภาพที่นี่
-
+![> แทรกรูปภาพที่นี่](images/Test-endpoint.png)
+![alt text](images/Test-Got-Redirect.png)
 ---
 
 ## สรุปสถาปัตยกรรมระบบ
@@ -1431,19 +1433,26 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+Axios คือไลบรารี JavaScript ประเภท Promise-based HTTP client ที่ใช้ส่งคำขอ (Request) ไปยังเซิร์ฟเวอร์ ทั้งในเบราว์เซอร์และ Node.js โดดเด่นเรื่องความง่ายในการใช้งาน การแปลงข้อมูล JSON อัตโนมัติ
+
+- การจัดการ JSON: Axios แปลงข้อมูลตอบกลับเป็น JSON ให้อัตโนมัติ 
+- การจัดการ Error: Axios ปฏิเสธ (Reject) Promise ถ้าสถานะ HTTP ไม่ใช่ 2xx ส่วน fetch จะแก้ไข (Resolve) Promise เสมอแม้เกิดข้อผิดพลาด เช่น 404 หรือ 500
+- ฟีเจอร์: Axios รองรับการยกเลิกคำขอ (Request Cancellation) และดักจับคำขอ (Interceptors) แต่ fetch ต้องเขียนโค้ดเพิ่มเอง
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+ถ้าไม่ตรวจสอบ loading ก่อน อาจทำให้ผู้ใช้ที่ล็อกอินอยู่แล้ว ถูกระบบเตะกลับไปหน้า Login ทันทีเมื่อกดรีเฟรชหน้าเว็บ (F5) เนื่องจากระบบทำงานก่อนที่แอปจะดึงข้อมูล Token จาก localStorage เสร็จ
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+มีความเสี่ยงสูงต่อการโจมตีแบบ XSS (Cross-Site Scripting) เพราะ JavaScript ใดๆ บนหน้าเว็บรวมถึงสคริปต์อันตรายจากภายนอก สามารถอ่านค่า token ไปได้ วิธีที่ดีกว่าคือการใช้ HttpOnly Cookies 
+- ทำให้ JavaScript ไม่สามารถอ่าน token ได้ 
+- ตั้งค่า Secure เพื่อให้ส่งผ่าน HTTPS เท่านั้น
+
 ```
 
 
