@@ -1468,8 +1468,49 @@ axios เป็น libray ต้องติดตั้งแฃะใช้ง
 
 - [ ] รูปผลการทดลองตามที่กำหนดในแต่ละขั้นตอน (แทรกในไฟล์นี้)
 - [ ] <img width="1526" height="257" alt="สกรีนช็อต 2026-03-08 022845" src="https://github.com/user-attachments/assets/25a34efd-ec4a-4748-bc19-7c7132fa2db0" />
+<img width="678" height="624" alt="สกรีนช็อต 2026-03-07 154016" src="https://github.com/user-attachments/assets/42f70166-0cb6-4c24-bb95-4538ada1f2aa" />
+<img width="686" height="689" alt="สกรีนช็อต 2026-03-07 155212" src="https://github.com/user-attachments/assets/b44ed9fa-c7cd-4635-b4c1-5f369a2fbb71" />
+<img width="994" height="685" alt="สกรีนช็อต 2026-03-07 160316" src="https://github.com/user-attachments/assets/43a04cd5-2b4c-44bc-b0c7-648630a82832" />
+<img width="756" height="786" alt="สกรีนช็อต 2026-03-07 160907" src="https://github.com/user-attachments/assets/0b981867-c049-43ec-b9bc-d5c086bec0be" />
+<img width="821" height="871" alt="สกรีนช็อต 2026-03-07 161158" src="https://github.com/user-attachments/assets/7c3c4d13-4173-4010-9906-7f7ec9820879" />
+<img width="820" height="871" alt="สกรีนช็อต 2026-03-07 161257" src="https://github.com/user-attachments/assets/f1631b0e-4124-4e2d-9920-ece98ac6c59f" />
+<img width="818" height="863" alt="สกรีนช็อต 2026-03-07 165316" src="https://github.com/user-attachments/assets/64cf607e-06d6-4b9b-b342-225db91ab2f8" />
+<img width="819" height="905" alt="สกรีนช็อต 2026-03-07 165834" src="https://github.com/user-attachments/assets/b3f06b4c-3615-4c8b-9c9c-b1a8d9b94597" />
+<img width="760" height="845" alt="สกรีนช็อต 2026-03-08 000041" src="https://github.com/user-attachments/assets/a792ee63-468e-4cad-a468-dbe82f727618" />
+<img width="729" height="238" alt="สกรีนช็อต 2026-03-08 001643" src="https://github.com/user-attachments/assets/c73c432c-95f9-497f-b4f9-8bc1c436499a" />
+<img width="944" height="815" alt="สกรีนช็อต 2026-03-08 013956" src="https://github.com/user-attachments/assets/546a0c85-25fe-45cc-9a38-12f2eee38505" />
+<img width="938" height="738" alt="สกรีนช็อต 2026-03-08 014037" src="https://github.com/user-attachments/assets/54559064-f6bf-4a1f-8fdf-59934b2ff7f1" />
+<img width="927" height="859" alt="สกรีนช็อต 2026-03-08 014132" src="https://github.com/user-attachments/assets/0939f58c-2e5f-4b8c-b03d-13df22fb680d" />
+<img width="952" height="910" alt="สกรีนช็อต 2026-03-08 014211" src="https://github.com/user-attachments/assets/09a614e0-5b4a-4b90-91c7-f15599e74f01" />
+<img width="952" height="910" alt="สกรีนช็อต 2026-03-08 014233" src="https://github.com/user-attachments/assets/b8bf9275-be16-463a-8a71-5b5fc271377d" />
+
+<img width="763" height="748" alt="สกรีนช็อต 2026-03-08 014251" src="https://github.com/user-attachments/assets/f8523d69-cf20-45f7-995a-be7a73f68ceb" />
+<img width="1526" height="257" alt="สกรีนช็อต 2026-03-08 022845" src="https://github.com/user-attachments/assets/f738d87a-573c-4e69-8636-b658b764e6d5" />
 
 - [ ] โค้ดที่แก้ไข: `server.js` (DELETE endpoint + GET `/api/users`)
+- [ ] // DELETE /api/bookings/:id — ลบการจอง (ต้อง login)
+app.delete('/api/bookings/:id', authenticateToken, (req, res) => {
+    db.run('DELETE FROM bookings WHERE id = ?', [req.params.id], function (err) {
+        if (err) return res.status(400).json({ error: err.message });
+        if (this.changes === 0) return res.status(404).json({ error: 'ไม่พบข้อมูลการจอง' });
+        res.json({ status: "ลบข้อมูลสำเร็จโดย [ศรัณย์]", id: req.params.id });
+    });
+});
+
+// เพิ่ม endpoint GET /api/users
+app.get("/api/users", authenticateToken, (req, res) => {
+
+    db.all("SELECT id, username FROM users", [], (err, rows) => {
+
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+
+        res.json(rows);
+
+    });
+
+});
 - [ ] ผลการทดสอบ Login / Logout บน Frontend พร้อมรูปภาพ
 - [ ] คำตอบคำถามท้ายใบงาน ครบทั้ง 3 ข้อ
 
