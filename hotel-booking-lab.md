@@ -1347,7 +1347,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
-> แทรกรูปภาพที่นี่ ![alt text](pictures/Result1.png)! [alt text](pictures/Result.png) ![alt text](pictures/Result2.png)
+> แทรกรูปภาพที่นี่ ![alt text](pictures/Result1.png)! ![alt text](pictures/Result.png) ![alt text](pictures/Result2.png)
 
 ---
 
