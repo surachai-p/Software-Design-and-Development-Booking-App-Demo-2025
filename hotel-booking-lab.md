@@ -1373,8 +1373,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
 > แทรกรูปภาพที่นี่
-<img width="1878" height="1068" alt="image" src="https://github.com/user-attachments/assets/2353a2c6-9d53-4d0f-9dbd-02e89acd86f2" />
-
+<img width="1893" height="1067" alt="image" src="https://github.com/user-attachments/assets/5492a7a7-486b-4a1d-aca0-c8aef8537258" />
 ---
 
 #### 3.3.3 ทดสอบการจัดการรายการจอง
@@ -1387,10 +1386,12 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
 > แทรกรูปภาพที่นี่
+<img width="1912" height="998" alt="image" src="https://github.com/user-attachments/assets/d4b6f635-4c14-4ba2-be9b-f29838ffccd9" />
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
 > แทรกรูปภาพที่นี่
+<img width="1899" height="1024" alt="image" src="https://github.com/user-attachments/assets/4155c776-9ac2-4ff1-87c0-291473779828" />
 
 ---
 
@@ -1402,6 +1403,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
 > แทรกรูปภาพที่นี่
+<img width="1807" height="985" alt="image" src="https://github.com/user-attachments/assets/cdeb4cfc-d431-41ea-8935-0f5d8b94dcc7" />
 
 ---
 
