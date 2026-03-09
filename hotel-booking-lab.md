@@ -412,7 +412,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
 > แทรกรูปภาพที่นี่
-
+ ![alt text](image.png)
 ---
 
 ## การทดลองที่ 2: การทดสอบ API ด้วย Postman
@@ -443,6 +443,8 @@ Server running on port 3001
 
 กด **Send** — ควรได้รับ Status `200 OK` พร้อม token
 
+![alt text](image-1.png)
+
 ```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
@@ -459,6 +461,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
 > แทรกรูปภาพที่นี่
+![alt text](image-2.png)
 
 ---
 
@@ -491,8 +494,7 @@ Headers: Content-Type: application/json
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
 > แทรกรูปภาพที่นี่
-
----
+![alt text](image-5.png)
 
 #### 2.3.2 ดึงข้อมูลทั้งหมด (GET All)
 
@@ -506,7 +508,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่ ![alt text](image-4.png)
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -524,7 +526,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
----
+--- ![alt text](image-6.png)
 
 #### 2.3.4 แก้ไขข้อมูลการจอง (PUT)
 
@@ -552,7 +554,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
----
+--- ![alt text](image-7.png)
 
 #### 2.3.5 ลบข้อมูลการจอง (DELETE)
 
@@ -566,7 +568,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
----
+--- ![alt text](image-8.png)
 
 ### 🔧 งานปรับปรุงโค้ด
 
@@ -575,7 +577,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่ ![alt text](image-9.png)  ![alt text](image-10.png)
 
 ---
 
@@ -675,7 +677,7 @@ npm run dev
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่  ![alt text](image-11.png)
 
 ---
 
@@ -1347,7 +1349,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่ ![alt text](image-12.png)
 
 ---
 
@@ -1359,7 +1361,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่ ![alt text](image-13.png)
 
 ---
 
@@ -1372,11 +1374,11 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่ ![alt text](image-14.png)
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่ ![alt text](image-15.png)
 
 ---
 
@@ -1387,7 +1389,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่ ![alt text](image-16.png)
 
 ---
 
@@ -1431,19 +1433,24 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+axios เป็นไลบรารียอดนิยมสำหรับใช้สร้าง HTTP Request เพื่อเชื่อมต่อกับ API (ดึงข้อมูล/ส่งข้อมูล)
+ข้อแตกต่างจาก fetch: > 1. axios จะแปลงข้อมูล JSON ให้เราอัตโนมัติ (ไม่ต้องเรียกใช้ .json() แบบ fetch)
+2. การจัดการ Error ทำได้ดีกว่า เพราะ axios จะโยน Error ให้ทันทีถ้า Status Code ไม่ใช่ 2xx แต่ fetch จะไม่มองว่า Error 404 หรือ 500 เป็นการ reject (ต้องเช็ค response.ok เอง)
+3. โค้ดสั้นกว่าและจัดการเรื่อง Headers หรือการส่ง Token ได้ง่ายกว่า
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+การตรวจสอบ loading state มีไว้เพื่อรอให้ระบบดึงข้อมูล User และ Token จาก localStorage ให้เสร็จสมบูรณ์ก่อน
+ถ้าไม่ตรวจสอบ: ทันทีที่เรารีเฟรชหน้าเว็บ (Refresh) ตัวแปร user จะเริ่มต้นเป็น null ชั่วขณะ ทำให้ ProtectedRoute เข้าใจผิดคิดว่าเรายังไม่ได้ Login และจะเตะ (Redirect) เรากลับไปหน้า /login ทันที ทั้งๆ ที่เราเคย Login ไว้แล้วครับ
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+การตรวจสอบ loading state มีไว้เพื่อรอให้ระบบดึงข้อมูล User และ Token จาก localStorage ให้เสร็จสมบูรณ์ก่อน
+ถ้าไม่ตรวจสอบ: ทันทีที่เรารีเฟรชหน้าเว็บ (Refresh) ตัวแปร user จะเริ่มต้นเป็น null ชั่วขณะ ทำให้ ProtectedRoute เข้าใจผิดคิดว่าเรายังไม่ได้ Login และจะเตะ (Redirect) เรากลับไปหน้า /login ทันที ทั้งๆ ที่เราเคย Login ไว้แล้วครับ
 ```
 
 
