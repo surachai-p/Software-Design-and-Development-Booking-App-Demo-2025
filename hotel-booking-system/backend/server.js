@@ -122,3 +122,18 @@ app.delete('/api/bookings/:id', authenticateToken, (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+app.get("/api/users", (req, res) => {
+  res.json([
+    {
+      id: 1,
+      username: "admin",
+      role: "admin"
+    },
+    {
+      id: 2,
+      username: "user",
+      role: "user"
+    }
+  ]);
+});
