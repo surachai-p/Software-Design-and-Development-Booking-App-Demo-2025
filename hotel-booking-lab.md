@@ -1396,10 +1396,13 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image19.png)
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image20.png)
+![alt text](image/image21.png)
 
 ---
 
