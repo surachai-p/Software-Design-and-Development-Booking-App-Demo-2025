@@ -412,6 +412,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image1.png)
 
 ---
 
@@ -460,6 +461,11 @@ Server running on port 3001
 
 > แทรกรูปภาพที่นี่
 
+#### 1.Login 
+![Login](image/image.png)
+
+#### 2.Token
+![Token](image/image2.png)
 ---
 
 ### 2.3 การทดสอบ CRUD Operations
@@ -491,7 +497,9 @@ Headers: Content-Type: application/json
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/image3.png)
+![alt text](image/image4.png)
+![alt text](image/image5.png)
 ---
 
 #### 2.3.2 ดึงข้อมูลทั้งหมด (GET All)
@@ -507,6 +515,9 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image6.png)
+![alt text](image/image7.png)
+
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -523,7 +534,8 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/image8.png)
+![alt text](image/image9.png)
 ---
 
 #### 2.3.4 แก้ไขข้อมูลการจอง (PUT)
@@ -551,6 +563,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image10.png)
 
 ---
 
@@ -565,6 +578,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image11.png)
 
 ---
 
@@ -576,7 +590,10 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
 > แทรกรูปภาพที่นี่
-
+### 1.DELETE with custom status
+![alt text](image/image12.png)
+### 2.GET /api/users
+![alt text](image/image13.png)
 ---
 
 ## การทดลองที่ 3: การพัฒนา Frontend ด้วย React
@@ -676,6 +693,7 @@ npm run dev
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image14.png)
 
 ---
 
@@ -1348,7 +1366,10 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
 > แทรกรูปภาพที่นี่
-
+### 1.หน้าฟอร์มจองห้องพัก
+![alt text](image/image15.png)
+### 2.หน้าสรุปการจอง
+![alt text](image/image16.png)
 ---
 
 #### 3.3.2 ทดสอบการ Login ระบบ Admin
@@ -1360,6 +1381,8 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image17.png)
+![alt text](image/image18.png)
 
 ---
 
@@ -1373,10 +1396,13 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image19.png)
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image20.png)
+![alt text](image/image21.png)
 
 ---
 
@@ -1388,6 +1414,11 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image22.png)
+
+### Protected Route
+![alt text](image/image23.png)
+![alt text](image/image24.png)
 
 ---
 
@@ -1432,18 +1463,47 @@ hotel-booking-system/
 
 ```
 เขียนคำตอบที่นี่
+Axios คือไลบรารีสำหรับใช้ส่ง HTTP Request ไปยัง API เช่น GET, POST, PUT และ DELETE โดยนิยมใช้ในแอปพลิเคชันที่พัฒนาด้วย JavaScript หรือ React เพื่อเรียกข้อมูลจาก Backend
+
+ความแตกต่างระหว่าง Axios และ Fetch มีดังนี้
+
+Axios แปลงข้อมูล JSON ให้อัตโนมัติ ส่วน Fetch ต้องใช้ .json() เพื่อแปลงข้อมูลเอง
+
+Axios จัดการ Error ได้ง่ายกว่า เพราะจะ throw error เมื่อ status code เป็น 4xx หรือ 5xx
+
+Axios สามารถตั้งค่า Header และ Base URL ได้สะดวกกว่า
+
+Fetch เป็นฟังก์ชันที่มีอยู่ใน JavaScript อยู่แล้ว ไม่ต้องติดตั้งไลบรารีเพิ่มเติม
+
+ดังนั้น Axios จึงนิยมใช้ในโปรเจค React เพราะใช้งานง่ายและจัดการ API ได้สะดวกกว่า
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
 เขียนคำตอบที่นี่
+ProtectedRoute ต้องตรวจสอบ loading state ก่อน เพื่อรอให้ระบบตรวจสอบข้อมูลผู้ใช้งานหรือ token ให้เสร็จสมบูรณ์ก่อนที่จะตัดสินใจว่าจะให้เข้าหน้านั้นได้หรือไม่
+
+หากไม่ตรวจสอบ loading state อาจเกิดปัญหา เช่น
+
+ระบบ redirect ไปหน้า Login ทั้งที่ผู้ใช้ยัง login อยู่
+
+เกิดการ redirect ไปมาระหว่างหน้า Login และหน้า Admin
+
+ทำให้หน้าเว็บโหลดผิดพลาดหรือแสดงผลไม่ถูกต้อง
+
+ดังนั้นการตรวจสอบ loading state จะช่วยให้ระบบรอข้อมูลผู้ใช้งานก่อน และป้องกันการ redirect ที่ผิดพลาด
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
 เขียนคำตอบที่นี่
+การเก็บ JWT token ใน localStorage มีความเสี่ยงด้านความปลอดภัย เพราะหากเว็บไซต์มีช่องโหว่แบบ Cross-Site Scripting (XSS) ผู้โจมตีสามารถเข้าถึง token และนำไปใช้แอบอ้างตัวตนของผู้ใช้ได้
+
+วิธีที่ปลอดภัยกว่าคือการเก็บ token ใน HTTP-only Cookie ซึ่ง JavaScript ไม่สามารถเข้าถึงได้ ทำให้ลดความเสี่ยงจากการโจมตีแบบ XSS
+
+ดังนั้นในการพัฒนาแอปพลิเคชันจริง มักนิยมใช้ HTTP-only Cookie ร่วมกับ Secure และ SameSite เพื่อเพิ่มความปลอดภัยให้กับระบบยืนยันตัวตน
 ```
 
 
