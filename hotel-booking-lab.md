@@ -1414,6 +1414,11 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image22.png)
+
+### Protected Route
+![alt text](image/image23.png)
+![alt text](image/image24.png)
 
 ---
 
