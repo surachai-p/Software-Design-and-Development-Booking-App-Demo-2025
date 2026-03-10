@@ -693,6 +693,7 @@ npm run dev
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image14.png)
 
 ---
 
