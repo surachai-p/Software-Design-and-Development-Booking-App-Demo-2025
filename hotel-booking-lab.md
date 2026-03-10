@@ -577,6 +577,37 @@ Headers: Authorization: Bearer {{token}}
 
 > ![alt text](image-7.png)
 ![alt text](image-8.png)
+"// DELETE /api/bookings/:id — ลบการจอง (ต้อง login)
+app.delete('/api/bookings/:id', authenticateToken, (req, res) => {
+  db.run('DELETE FROM bookings WHERE id = ?', [req.params.id], function(err) {
+    if (err)             return res.status(400).json({ error: err.message });
+    if (this.changes === 0) return res.status(404).json({ error: 'ไม่พบข้อมูลการจอง' });
+    res.json({ message: 'ลบข้อมูลสำเร็จโดย กันติชา ย๋องชา', id: req.params.id });
+  });
+});"
+
+"// GET /api/bookings/:id — ดึงข้อมูลตาม ID (ต้อง login)
+app.get('/api/bookings/:id', authenticateToken, (req, res) => {
+  db.get('SELECT * FROM bookings WHERE id = ?', [req.params.id], (err, row) => {
+    if (err)  return res.status(400).json({ error: err.message });
+    if (!row) return res.status(404).json({ error: 'ไม่พบข้อมูลการจอง' });
+    res.json(row);
+  });
+});
+app.get('/api/users', authenticateToken, (req, res) => {
+
+  db.all("SELECT * FROM users", [], (err, rows) => {
+
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+
+    res.json(rows);
+
+  });
+
+});"
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 ---
 
@@ -1348,7 +1379,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-10.png)
 
 ---
 
@@ -1360,8 +1391,8 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
-> แทรกรูปภาพที่นี่
-
+> ![alt text](image-11.png)
+![alt text](image-12.png)
 ---
 
 #### 3.3.3 ทดสอบการจัดการรายการจอง
@@ -1372,12 +1403,11 @@ export default App;
 4. กดปุ่ม **"ลบ"** — ยืนยันการลบข้อมูล
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
+![alt text](<Screenshot 2026-03-10 140628.png>)
 
-> แทรกรูปภาพที่นี่
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
-
-> แทรกรูปภาพที่นี่
+![alt text](image-13.png)
 
 ---
 
@@ -1388,7 +1418,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-15.png)
 
 ---
 
@@ -1432,19 +1462,32 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+axios คือ library สำหรับใช้ส่ง HTTP request เช่น GET, POST, PUT, DELETE เพื่อเชื่อมต่อกับ API จากฝั่ง client เช่น React หรือ JavaScript
+
+ความแตกต่างระหว่าง axios กับ fetch
+
+1. axios จะแปลงข้อมูล JSON ให้อัตโนมัติ ส่วน fetch ต้องใช้ .json() เอง
+2. axios มีการจัดการ error ที่ง่ายกว่า fetch
+3. axios สามารถตั้งค่า default เช่น baseURL หรือ headers ได้สะดวก
+4. axios รองรับการยกเลิก request และการตั้ง interceptor ได้
+
+สรุปคือ axios ใช้งานง่ายกว่าและมีความสามารถเพิ่มเติม ส่วน fetch เป็น API มาตรฐานที่มีอยู่ใน JavaScript อยู่แล้วโดยไม่ต้องติดตั้งเพิ่ม
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+ProtectedRoute ต้องตรวจสอบ loading state ก่อน เพราะในช่วงแรกของการเปิดแอป ระบบกำลังโหลดข้อมูลผู้ใช้จาก localStorage เพื่อตรวจสอบว่าผู้ใช้เคย login อยู่หรือไม่
+
+ถ้าไม่ตรวจสอบ loading ก่อน ระบบอาจคิดว่า user เป็น null ทันที และ redirect ไปหน้า login ทั้งที่จริงผู้ใช้ยัง login อยู่ ทำให้เกิดการ redirect ผิดพลาดหรือหน้าจอกระพริบระหว่างโหลดข้อมูล
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+การเก็บ JWT token ใน localStorage มีความเสี่ยงด้านความปลอดภัย เพราะหากเว็บไซต์มีช่องโหว่แบบ Cross-Site Scripting (XSS) ผู้ไม่หวังดีสามารถเข้าถึง token ใน localStorage และนำไปใช้ปลอมตัวเป็นผู้ใช้ได้
+
+วิธีที่ปลอดภัยกว่าคือการเก็บ token ใน HttpOnly Cookie ซึ่ง JavaScript ไม่สามารถเข้าถึงได้ ทำให้ลดความเสี่ยงจากการถูกขโมย token ผ่าน XSS
 ```
 
 
