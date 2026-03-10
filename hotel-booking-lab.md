@@ -534,7 +534,8 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/image8.png)
+![alt text](image/image9.png)
 ---
 
 #### 2.3.4 แก้ไขข้อมูลการจอง (PUT)
