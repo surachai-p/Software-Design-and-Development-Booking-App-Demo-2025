@@ -497,7 +497,9 @@ Headers: Content-Type: application/json
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/image3.png)
+![alt text](image/image4.png)
+![alt text](image/image5.png)
 ---
 
 #### 2.3.2 ดึงข้อมูลทั้งหมด (GET All)
@@ -513,6 +515,9 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
 > แทรกรูปภาพที่นี่
+![alt text](image/image6.png)
+![alt text](image/image7.png)
+
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
