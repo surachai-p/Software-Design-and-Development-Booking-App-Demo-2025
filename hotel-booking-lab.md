@@ -590,7 +590,10 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
 > แทรกรูปภาพที่นี่
-
+### 1.DELETE with custom status
+![alt text](image/image12.png)
+### 2.GET /api/users
+![alt text](image/image13.png)
 ---
 
 ## การทดลองที่ 3: การพัฒนา Frontend ด้วย React
