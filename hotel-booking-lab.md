@@ -413,7 +413,7 @@ Server running on port 3001
 
 > แทรกรูปภาพที่นี่
 
-![alt text](../images/1.png)
+![alt text](Software-Design-and-Development-Booking-App-Demo-2025/images/1.png)
 ---
 
 ## การทดลองที่ 2: การทดสอบ API ด้วย Postman
