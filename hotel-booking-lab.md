@@ -411,7 +411,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image.png)
 
 ---
 
@@ -458,7 +458,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-1.png)
 
 ---
 
@@ -490,7 +490,7 @@ Headers: Content-Type: application/json
 
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-2.png)![alt text](image-3.png)![alt text](image-4.png)
 
 ---
 
@@ -506,7 +506,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-5.png)
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -522,7 +522,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-6.png)
 
 ---
 
@@ -550,7 +550,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-7.png)
 
 ---
 
@@ -564,7 +564,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-8.png)
 
 ---
 
@@ -575,7 +575,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-9.png)![alt text](image-10.png)
 
 ---
 
@@ -675,7 +675,7 @@ npm run dev
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-11.png)
 
 ---
 
@@ -1347,7 +1347,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-12.png)![alt text](image-13.png)
 
 ---
 
@@ -1359,7 +1359,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-14.png)
 
 ---
 
@@ -1372,11 +1372,11 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-15.png)
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-16.png)
 
 ---
 
@@ -1387,8 +1387,8 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
-> แทรกรูปภาพที่นี่
-
+>
+![alt text](image-17.png)![alt text](image-18.png)
 ---
 
 ## สรุปสถาปัตยกรรมระบบ
@@ -1431,19 +1431,22 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+axios คือตัวรับส่งข้อมูลที่ฉลาดกว่า fetch เพราะมันแปลงไฟล์ JSON ให้เองอัตโนมัติ และแจ้งเตือน 
+Error ทันทีที่ Backend มีปัญหา (เช่น Error 404/500)โดยไม่ต้องเขียนเช็คเงื่อนไขเพิ่มเหมือน fetch
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+เพื่อรอให้ระบบอ่านข้อมูล Login จากเครื่องให้เสร็จก่อน หากไม่เช็ค ระบบจะนึกว่าเรายังไม่ Login 
+(เพราะหาข้อมูลไม่ทัน) แล้วจะเด้งเรากลับไปหน้า Login ทั้งที่เราเพิ่งเข้าเว็บมา
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+เสี่ยงต่อการโดน Script ฝังตัว (XSS) แอบขโมย Token ไปได้ง่าย วิธีที่ปลอดภัยกว่าคือเก็บใน HttpOnly Cookie
+เพราะตัว Script จะไม่สามารถแอบอ่านข้อมูลใน Cookie นี้ได้
 ```
 
 
