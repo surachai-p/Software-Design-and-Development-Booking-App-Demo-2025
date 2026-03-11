@@ -411,8 +411,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
-> แทรกรูปภาพที่นี่
-
+> ![alt text](image.png)
 ---
 
 ## การทดลองที่ 2: การทดสอบ API ด้วย Postman
@@ -458,7 +457,8 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-1.png)
+  ![alt text](image-2.png)
 
 ---
 
@@ -490,7 +490,9 @@ Headers: Content-Type: application/json
 
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-3.png)
+  ![alt text](image-4.png)
+  ![alt text](image-5.png)
 
 ---
 
@@ -506,7 +508,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-6.png)
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -522,7 +524,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-7.png)
 
 ---
 
@@ -550,7 +552,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-8.png)
 
 ---
 
@@ -564,7 +566,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-9.png)
 
 ---
 
@@ -575,7 +577,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-10.png)
 
 ---
 
@@ -675,7 +677,7 @@ npm run dev
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-11.png)
 
 ---
 
@@ -1347,7 +1349,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-12.png)
 
 ---
 
@@ -1431,19 +1433,19 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+Axios เป็นไลบรารีสำหรับส่ง HTTP Request เช่น GET, POST เพื่อดึงหรือส่งข้อมูลกับ API ได้ง่ายกว่า fetch โดย axios จะแปลงข้อมูล JSON อัตโนมัติ จัดการ error ได้ง่าย และสามารถตั้งค่า headers หรือ interceptors ได้สะดวกกว่า ส่วน fetch เป็นฟังก์ชันพื้นฐานของ JavaScript ที่ต้องเขียนโค้ดจัดการ response และ error เพิ่มเอง
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+ProtectedRoute ต้องตรวจสอบ loading state เพื่อรอให้ระบบตรวจสอบสถานะการเข้าสู่ระบบของผู้ใช้ก่อน หากไม่ตรวจสอบ อาจทำให้ผู้ใช้ที่ล็อกอินแล้วถูก redirect ไปหน้า login ผิดพลาด เพราะระบบยังโหลดข้อมูลการยืนยันตัวตนไม่เสร็จ
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+การเก็บ JWT token ใน localStorage มีความเสี่ยงต่อการถูกโจมตีแบบ XSS (Cross-Site Scripting) เพราะ JavaScript สามารถเข้าถึงข้อมูลได้ วิธีที่ปลอดภัยกว่าคือการเก็บ token ใน HttpOnly Cookies ซึ่งไม่สามารถเข้าถึงผ่าน JavaScript ทำให้ลดความเสี่ยงจากการถูกขโมย token
 ```
 
 
