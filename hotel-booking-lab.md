@@ -411,7 +411,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่![alt text](image/1.png)
 
 ---
 
@@ -459,7 +459,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/2.png)
 ---
 
 ### 2.3 การทดสอบ CRUD Operations
@@ -491,7 +491,7 @@ Headers: Content-Type: application/json
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/3.png)
 ---
 
 #### 2.3.2 ดึงข้อมูลทั้งหมด (GET All)
@@ -507,7 +507,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/4.png)
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
 ---
@@ -523,7 +523,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/5.png)
 ---
 
 #### 2.3.4 แก้ไขข้อมูลการจอง (PUT)
@@ -549,7 +549,7 @@ Headers: Authorization: Bearer {{token}}
 ```
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
-
+![alt text](image/6.png)
 > แทรกรูปภาพที่นี่
 
 ---
@@ -565,7 +565,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/7.png)
 ---
 
 ### 🔧 งานปรับปรุงโค้ด
@@ -576,7 +576,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/8.png)
 ---
 
 ## การทดลองที่ 3: การพัฒนา Frontend ด้วย React
@@ -676,12 +676,12 @@ npm run dev
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/9.png)
 ---
 
 ### 3.2 การสร้าง Components
 
-#### 3.2.1 `AuthContext.jsx` — ระบบจัดการ Authentication
+#### 3.2.1 `ฏ` — ระบบจัดการ Authentication
 
 สร้างไฟล์ `src/contexts/AuthContext.jsx`
 
@@ -1377,7 +1377,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/10.png)
 ---
 
 #### 3.3.4 ทดสอบการ Logout และ Protected Route
@@ -1388,7 +1388,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image/11.png)
 ---
 
 ## สรุปสถาปัตยกรรมระบบ
@@ -1431,19 +1431,19 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+คือไลบรารียอดนิยมที่ใช้สำหรับส่ง HTTP Request (เช่น GET, POST, PUT, DELETE) จากหน้าเว็บ (Frontend) ไปคุยกับเซิร์ฟเวอร์ (Backend) หรือ API ต่างๆ
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+เนื่องจากเมื่อผู้ใช้กดรีเฟรชหน้าเว็บ (Refresh) หรือเปิดเบราว์เซอร์ขึ้นมาใหม่ React จะทำการรีเซ็ต State เริ่มต้นทั้งหมด ทำให้ตัวแปร user ใน AuthContext มีค่าเริ่มต้นเป็น null
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+เlocalStorage ถูกออกแบบมาให้สามารถถูกอ่านและเขียนค่าได้อย่างอิสระผ่าน JavaScript (localStorage.getItem(...)) ความเสี่ยงที่ร้ายแรงที่สุดคือการถูกโจมตีแบบ XSS (Cross-Site Scripting) หากเว็บไซต์ของเรามีช่องโหว่ที่ยอมให้แฮกเกอร์สามารถแอบฝังโค้ด JavaScript แปลกปลอมลงมาทำงานบนหน้าเว็บของผู้ใช้ได้ โค้ดนั้นก็จะสามารถดึงค่า JWT Token จาก localStorage และส่งกลับไปให้แฮกเกอร์ เพื่อนำไปใช้สวมรอยเป็นผู้ใช้คนนั้นได้ทันที
 ```
 
 
