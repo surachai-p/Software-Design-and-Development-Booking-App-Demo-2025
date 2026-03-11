@@ -412,7 +412,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image.png)
 ---
 
 ## การทดลองที่ 2: การทดสอบ API ด้วย Postman
@@ -459,7 +459,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-1.png)
 ---
 
 ### 2.3 การทดสอบ CRUD Operations
@@ -491,7 +491,9 @@ Headers: Content-Type: application/json
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
 ---
 
 #### 2.3.2 ดึงข้อมูลทั้งหมด (GET All)
@@ -507,7 +509,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-5.png)
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
 ---
@@ -523,7 +525,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-6.png)
 ---
 
 #### 2.3.4 แก้ไขข้อมูลการจอง (PUT)
@@ -551,7 +553,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-7.png)
 ---
 
 #### 2.3.5 ลบข้อมูลการจอง (DELETE)
@@ -565,7 +567,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-8.png)
 ---
 
 ### 🔧 งานปรับปรุงโค้ด
@@ -576,7 +578,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-9.png)
 ---
 
 ## การทดลองที่ 3: การพัฒนา Frontend ด้วย React
@@ -676,7 +678,7 @@ npm run dev
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
 > แทรกรูปภาพที่นี่
-
+![alt text](image-10.png)
 ---
 
 ### 3.2 การสร้าง Components
