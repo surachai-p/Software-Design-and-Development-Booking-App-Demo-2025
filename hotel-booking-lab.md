@@ -402,6 +402,7 @@ npm run dev
 ```
 
 ผลลัพธ์ที่ควรเห็น:
+![alt text](image.png)
 
 ```
 [nodemon] starting `node server.js`
@@ -410,8 +411,7 @@ Server running on port 3001
 ```
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
-
-> แทรกรูปภาพที่นี่
+![alt text](image-1.png)
 
 ---
 
@@ -458,8 +458,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
-> แทรกรูปภาพที่นี่
-
+![alt text](image-1.png)
 ---
 
 ### 2.3 การทดสอบ CRUD Operations
