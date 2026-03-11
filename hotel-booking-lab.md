@@ -413,6 +413,7 @@ Server running on port 3001
 
 > แทรกรูปภาพที่นี่
 
+![alt text](images/1.png)
 ---
 
 ## การทดลองที่ 2: การทดสอบ API ด้วย Postman
@@ -460,6 +461,7 @@ Server running on port 3001
 
 > แทรกรูปภาพที่นี่
 
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\2.png](images/2.png)
 ---
 
 ### 2.3 การทดสอบ CRUD Operations
@@ -492,6 +494,11 @@ Headers: Content-Type: application/json
 
 > แทรกรูปภาพที่นี่
 
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\3-2.png](images/3-2.png)
+
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\3-1.png](images/3-1.png)
+
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\3-3.png](images/3-3.png)
 ---
 
 #### 2.3.2 ดึงข้อมูลทั้งหมด (GET All)
@@ -507,6 +514,8 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
 > แทรกรูปภาพที่นี่
+
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\4.png](images/4.png)
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -524,6 +533,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\5.png](images/5.png)
 ---
 
 #### 2.3.4 แก้ไขข้อมูลการจอง (PUT)
@@ -552,6 +562,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\6.png](images/6.png)
 ---
 
 #### 2.3.5 ลบข้อมูลการจอง (DELETE)
@@ -566,6 +577,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\7.png](images/7.png)
 ---
 
 ### 🔧 งานปรับปรุงโค้ด
@@ -577,6 +589,9 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\8-1.png](images/8-1.png)
+
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\8-2.png](images/8-2.png)
 ---
 
 ## การทดลองที่ 3: การพัฒนา Frontend ด้วย React
@@ -677,6 +692,9 @@ npm run dev
 
 > แทรกรูปภาพที่นี่
 
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\9-1.png](images/9-1.png)
+
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\9-2.png](images/9-2.png)
 ---
 
 ### 3.2 การสร้าง Components
@@ -1349,6 +1367,9 @@ export default App;
 
 > แทรกรูปภาพที่นี่
 
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\10-2.png](images/10-2.png)
+
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\10-1.png](images/10-1.png)
 ---
 
 #### 3.3.2 ทดสอบการ Login ระบบ Admin
@@ -1361,6 +1382,9 @@ export default App;
 
 > แทรกรูปภาพที่นี่
 
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\11-1.png](images/11-1.png)
+
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\11-2.png](images/11-2.png)
 ---
 
 #### 3.3.3 ทดสอบการจัดการรายการจอง
@@ -1374,10 +1398,12 @@ export default App;
 
 > แทรกรูปภาพที่นี่
 
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\12-1.png](images/12-1.png)
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
 > แทรกรูปภาพที่นี่
 
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\12-2.png](images/12-2.png)
 ---
 
 #### 3.3.4 ทดสอบการ Logout และ Protected Route
@@ -1389,6 +1415,7 @@ export default App;
 
 > แทรกรูปภาพที่นี่
 
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\13.png](images/13.png)
 ---
 
 ## สรุปสถาปัตยกรรมระบบ
@@ -1431,19 +1458,19 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+axios เป็นไลบรารีเสริมที่ใช้งานง่ายกว่า fetch เพราะแปลงข้อมูลเป็น JSON ให้อัตโนมัติ และดักจับ Error (เช่น 404, 500) ให้เลยทันที ในขณะที่ fetch ต้องเขียนโค้ดเพื่อแปลงข้อมูลและจัดการ Error เองยืดยาวกว่า
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+เพราะการตรวจสอบสิทธิ์ล็อกอินต้องใช้เวลา (โหลดข้อมูล) หากไม่เช็ค loading ไว้ก่อน ระบบจะมองเห็นข้อมูลตอนแรกเป็นว่างเปล่า (null) และจะเผลอ "เตะ" ผู้ใช้ที่ล็อกอินแล้วเด้งกลับไปหน้า Login ทันที
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+การเก็บ Token ใน localStorage เสี่ยงต่อการโดนขโมยผ่านการโจมตีด้วยสคริปต์ (XSS) เพราะ JavaScript สามารถอ่านค่าได้ วิธีที่ดีและปลอดภัยกว่าคือการเก็บใน HttpOnly Cookies เพราะระบบจะล็อกไม่ให้ JavaScript เข้าถึงตัว Token ได้เลย
 ```
 
 
