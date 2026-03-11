@@ -413,7 +413,7 @@ Server running on port 3001
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image.png)
 
 ## การทดลองที่ 2: การทดสอบ API ด้วย Postman
 
