@@ -411,7 +411,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
-> แทรกรูปภาพที่นี่
+> <img width="1343" height="312" alt="image" src="https://github.com/user-attachments/assets/859e3cfd-c7ef-4cc0-89cd-841dc7f724bf" />
 
 ---
 
@@ -458,7 +458,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
-> แทรกรูปภาพที่นี่
+> <img width="899" height="862" alt="image" src="https://github.com/user-attachments/assets/9987d469-b56d-496a-924d-9eea2c3fee94" />
 
 ---
 
@@ -490,8 +490,9 @@ Headers: Content-Type: application/json
 
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
-> แทรกรูปภาพที่นี่
-
+> <img width="905" height="874" alt="image" src="https://github.com/user-attachments/assets/00fbfa1d-1824-492b-96b1-6f80e91cee9f" />
+<img width="909" height="884" alt="image" src="https://github.com/user-attachments/assets/1f324f45-362f-49ed-af37-2fb3ba32dbee" />
+<img width="895" height="881" alt="image" src="https://github.com/user-attachments/assets/e5d45171-f58c-4eac-8f91-02c5f87b5049" />
 ---
 
 #### 2.3.2 ดึงข้อมูลทั้งหมด (GET All)
@@ -506,7 +507,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
-> แทรกรูปภาพที่นี่
+> <img width="898" height="897" alt="image" src="https://github.com/user-attachments/assets/ed1580aa-96df-4cde-b2e5-d25487c8aba4" />
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -522,7 +523,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
-> แทรกรูปภาพที่นี่
+> <img width="902" height="903" alt="image" src="https://github.com/user-attachments/assets/f856d10b-cd31-4653-9a86-7c230b2f60f0" />
 
 ---
 
@@ -550,7 +551,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
-> แทรกรูปภาพที่นี่
+> <img width="889" height="909" alt="image" src="https://github.com/user-attachments/assets/9fa808b0-84a5-4ae8-a3f0-ffc19b1df3bd" />
 
 ---
 
@@ -564,7 +565,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
-> แทรกรูปภาพที่นี่
+> 
 
 ---
 
@@ -575,7 +576,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
-> แทรกรูปภาพที่นี่
+> <img width="894" height="895" alt="image" src="https://github.com/user-attachments/assets/3b8c1385-dfdc-494b-987f-163e92e337b4" />
 
 ---
 
@@ -675,7 +676,7 @@ npm run dev
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
-> แทรกรูปภาพที่นี่
+> <img width="1910" height="1031" alt="image" src="https://github.com/user-attachments/assets/6c6ca9cc-f198-4bef-8ca5-143eb6b89f6e" />
 
 ---
 
@@ -1347,7 +1348,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
-> แทรกรูปภาพที่นี่
+> <img width="1354" height="959" alt="image" src="https://github.com/user-attachments/assets/123ce8be-a7cc-4fd4-b666-e637f3772386" />
 
 ---
 
@@ -1359,7 +1360,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
-> แทรกรูปภาพที่นี่
+> <img width="1910" height="920" alt="image" src="https://github.com/user-attachments/assets/0e5a2f73-c2ad-4ef3-9887-417ad704402a" />
 
 ---
 
@@ -1372,11 +1373,11 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
-> แทรกรูปภาพที่นี่
+> <img width="1884" height="909" alt="image" src="https://github.com/user-attachments/assets/5c060d1f-2efb-4d68-bbbc-bb7f9109800f" />
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
-> แทรกรูปภาพที่นี่
+> <img width="780" height="940" alt="image" src="https://github.com/user-attachments/assets/3220a65f-7ee0-4a3d-ade8-8768a714185d" />
 
 ---
 
@@ -1387,7 +1388,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
-> แทรกรูปภาพที่นี่
+> <img width="1749" height="913" alt="image" src="https://github.com/user-attachments/assets/ba6ccbb0-5cc0-40c7-a299-606cd6a0f63b" />
 
 ---
 
@@ -1431,19 +1432,30 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+Axios คือไลบรารีสำหรับใช้ส่ง HTTP Request จาก JavaScript ไปยัง API เช่น GET, POST, PUT, DELETE โดยช่วยให้การเขียนโค้ดเรียก API ทำได้ง่ายขึ้น
+
+ความแตกต่างระหว่าง Axios และ Fetch คือ
+
+1. Axios แปลงข้อมูล JSON ให้อัตโนมัติ แต่ Fetch ต้องใช้ .json() เพื่อแปลงข้อมูลเอง
+2. Axios สามารถจัดการ error ของ HTTP status ได้ง่ายกว่า ในขณะที่ Fetch จะไม่ throw error เมื่อ status เป็น 4xx หรือ 5xx
+3. Axios รองรับการตั้งค่า interceptors สำหรับดัก request และ response ได้ง่าย
+4. Fetch เป็น API ที่มีอยู่ใน JavaScript อยู่แล้ว ไม่ต้องติดตั้งเพิ่ม แต่ Axios ต้องติดตั้งผ่าน npm
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+ProtectedRoute ต้องตรวจสอบ loading state ก่อน เพราะระบบต้องรอให้ตรวจสอบสถานะการ login ของผู้ใช้ให้เสร็จก่อน
+
+ถ้าไม่ตรวจสอบ loading state อาจทำให้ระบบ redirect ผู้ใช้ไปหน้า login ทันที ทั้งที่ผู้ใช้ยังมี token และกำลังตรวจสอบข้อมูลอยู่ ส่งผลให้เกิดการ redirect ผิดพลาดหรือหน้าจอกระพริบ
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+การเก็บ JWT token ใน localStorage มีความเสี่ยงจากการถูกโจมตีแบบ XSS (Cross-Site Scripting) เพราะ JavaScript บนหน้าเว็บสามารถเข้าถึง localStorage ได้ หากมีสคริปต์อันตรายแทรกเข้ามา อาจขโมย token ของผู้ใช้ได้
+
+วิธีที่ปลอดภัยกว่าคือการเก็บ token ใน HttpOnly Cookie เพราะ JavaScript ไม่สามารถเข้าถึง cookie ประเภทนี้ได้ ทำให้ลดความเสี่ยงจากการถูกขโมย token
 ```
 
 
