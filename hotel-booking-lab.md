@@ -413,7 +413,7 @@ Server running on port 3001
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image.png)
 
 ## การทดลองที่ 2: การทดสอบ API ด้วย Postman
 
@@ -677,7 +677,7 @@ npm run dev
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image-1.png)
 
 ### 3.2 การสร้าง Components
 
@@ -1349,7 +1349,7 @@ export default App;
 
 > แทรกรูปภาพที่นี่
 
----
+---![alt text](image-2.png)![alt text](image-3.png)
 
 #### 3.3.2 ทดสอบการ Login ระบบ Admin
 
@@ -1359,7 +1359,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-5.png)
 
 ---
 
@@ -1431,19 +1431,29 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+Axios เป็นไลบรารีของ JavaScript ที่ใช้สำหรับส่ง HTTP Request ไปยัง Server เช่น GET, POST, PUT และ DELETE เพื่อดึงหรือส่งข้อมูลกับ API
+
+ส่วน Fetch เป็นฟังก์ชันที่มีอยู่ใน JavaScript อยู่แล้ว (built-in API) ใช้สำหรับทำ HTTP Request เช่นเดียวกัน
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+ProtectedRoute ต้องตรวจสอบ loading state ก่อน เพราะระบบต้องรอให้การตรวจสอบสถานะผู้ใช้ (authentication) เสร็จสิ้นก่อน เช่น การตรวจสอบ JWT token หรือข้อมูลผู้ใช้จาก server
+
+ถ้าไม่ตรวจสอบ loading state จะเกิดปัญหา เช่น
+	1.	ระบบอาจ redirect ผู้ใช้ไปหน้า login ทั้งที่ผู้ใช้ login อยู่แล้ว
+	2.	หน้าเว็บอาจแสดงผลผิดพลาด (flash หน้า login ชั่วคราว)
+	3.	ทำให้ประสบการณ์ผู้ใช้ไม่ดี เพราะหน้าเว็บโหลดผิดลำดับ
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+การเก็บ JWT token ใน localStorage มีความเสี่ยงด้านความปลอดภัย เพราะ
+	1.	หากเว็บไซต์ถูกโจมตีแบบ XSS (Cross-Site Scripting)
+ผู้โจมตีสามารถเข้าถึง localStorage และขโมย token ได้
+	2.	token จะถูกเก็บไว้ใน browser แม้ปิดหน้าเว็บแล้ว ทำให้หากเครื่องถูกใช้งานโดยผู้อื่น อาจถูกนำ token ไปใช้ได้
 ```
 
 
