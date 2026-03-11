@@ -411,7 +411,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image.png)
 
 ---
 
@@ -458,7 +458,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-1.png)
 
 ---
 
@@ -490,7 +490,7 @@ Headers: Content-Type: application/json
 
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-2.png)![alt text](image-3.png)![alt text](image-4.png)
 
 ---
 
@@ -506,7 +506,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-5.png)
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -522,7 +522,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-6.png)
 
 ---
 
@@ -550,7 +550,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-7.png)
 
 ---
 
@@ -564,7 +564,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-8.png)
 
 ---
 
@@ -675,7 +675,7 @@ npm run dev
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-9.png)
 
 ---
 
@@ -1347,7 +1347,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-10.png)![alt text](image-11.png)
 
 ---
 
@@ -1359,7 +1359,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-12.png)![alt text](image-13.png)
 
 ---
 
@@ -1372,11 +1372,10 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
-> แทรกรูปภาพที่นี่
-
+> ![alt text](image-14.png)![alt text](image-15.png)![alt text](image-16.png)
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-17.png)
 
 ---
 
@@ -1387,7 +1386,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
-> แทรกรูปภาพที่นี่
+> ![alt text](image-18.png)
 
 ---
 
@@ -1431,19 +1430,35 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+การแปลงข้อมูล: Axios จะแปลงข้อมูลเป็น JSON อัตโนมัติ (Automatic JSON Transformation) ทั้งขาไปและขากลับ ในขณะที่ fetch ต้องเรียก .json() ก่อนถึงจะนำข้อมูลมาใช้ได้
+
+การจัดการ Error: Axios จะมองว่า Status Code ที่ไม่ใช่ 2xx (เช่น 404 หรือ 500) คือ Error และเด้งไปที่ catch ทันที แต่ fetch จะมองว่าสำเร็จตราบใดที่ยังเชื่อมต่อ Server ได้ (ต้องไปเช็ค response.ok เอง)
+
+ความสะดวก: Axios รองรับฟีเจอร์ที่สูงกว่าเช่น Interceptors (ตัวดักจับ request/response) และการยกเลิก Request (Cancel Token) ได้ง่ายกว่า
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+เมื่อผู้ใช้กด Refresh หน้าเว็บ ค่า user ใน State จะเริ่มต้นเป็น null เสมอในจังหวะแรก
+
+หากไม่มีการเช็ค loading, ตัว ProtectedRoute จะเข้าใจผิดว่าผู้ใช้ "ไม่ได้ Login"
+
+ระบบจะทำการ Redirect ผู้ใช้กลับไปหน้า Login ทันที ทั้งที่จริงๆ แล้วผู้ใช้มี Token อยู่ในเครื่องแต่ระบบยังโหลดไม่เสร็จ ทำให้เกิดประสบการณ์การใช้งานที่ไม่ดี (User Experience)
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+ความเสี่ยง:
+
+XSS (Cross-Site Scripting): หาก Hacker สามารถรัน JavaScript บนหน้าเว็บของเราได้ (เช่น ผ่านช่องโหว่ของ Input) เขาสามารถใช้คำสั่ง localStorage.getItem('token') เพื่อขโมย Token ออกไปได้ง่ายมาก เพราะ JavaScript ใน Domain เดียวกันเข้าถึง localStorage ได้ทั้งหมด
+
+วิธีอื่นที่ดีกว่า:
+
+HttpOnly Cookie: การเก็บ Token ไว้ใน Cookie ที่ตั้งค่า httpOnly: true วิธีนี้จะทำให้ JavaScript ไม่สามารถอ่าน Token ได้เลย (ป้องกัน XSS ได้ 100% ในส่วนของการขโมย Token) โดย Browser จะส่ง Cookie นี้ไปพร้อมกับ Request โดยอัตโนมัติเมื่อติดต่อกับ Server
+
+In-memory State + Refresh Token: เก็บ Access Token ไว้ในหน่วยความจำ (State) และใช้ Refresh Token ใน HttpOnly Cookie เพื่อขอ Access Token ใหม่เมื่อหน้าเว็บถูก Refresh
 ```
 
 
