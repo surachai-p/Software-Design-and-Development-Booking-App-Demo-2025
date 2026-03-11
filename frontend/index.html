@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hotel Booking System</title>
+<link rel="stylesheet" href="shared.css" />
+<style>
+  /* ── Hero ── */
+  .hero {
+    text-align: center; padding: 5rem 2rem 4rem;
+    background: linear-gradient(135deg, #2c2c2c, #3d3d3d);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 65% 40%, rgba(201,168,76,.18), transparent 60%);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif; font-size: 3rem;
+    color: var(--gold); position: relative; margin-bottom: .6rem;
+  }
+  .hero p { color: #bbb; font-size: 1rem; position: relative; margin-bottom: 2rem; }
+  .hero-btn {
+    background: var(--gold); color: var(--char); border: none; cursor: pointer;
+    font-weight: 700; font-family: 'DM Sans', sans-serif; font-size: 1rem;
+    padding: .9rem 2.75rem; border-radius: 4px; transition: .2s; position: relative;
+    text-decoration: none; display: inline-block;
+  }
+  .hero-btn:hover { background: var(--gold-d); color: #fff; transform: translateY(-2px); }
+
+  /* ── Features ── */
+  .features {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem; padding: 2.5rem 2rem;
+    max-width: 960px; margin: 0 auto;
+  }
+  .feat {
+    background: var(--warm); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1.6rem; box-shadow: 0 2px 8px rgba(44,44,44,.07);
+    transition: .2s;
+  }
+  .feat:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+  .feat-icon { font-size: 1.9rem; margin-bottom: .6rem; }
+  .feat-title { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: .3rem; }
+  .feat-desc { color: var(--slate); font-size: .825rem; line-height: 1.65; }
+
+  /* ── Booking section ── */
+  #booking { padding-top: 1rem; background: var(--cream); }
+  .booking-header { text-align: center; padding: 2.5rem 2rem 0; }
+  .booking-header .sec-title { display: inline-block; }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--char); color: #888; text-align: center;
+    padding: 1.5rem 2rem; font-size: .8rem; margin-top: 3rem;
+  }
+  footer span { color: var(--gold); }
+
+  @media (max-width: 640px) {
+    .features { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="brand" href="index.html">🏨 The Grand Booking</a>
+  <div class="nav-links">
+    <a class="nav-btn active" href="index.html">หน้าแรก</a>
+    <a class="nav-btn" href="#booking">จองห้องพัก</a>
+    <span id="nav-auth"></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero fadein">
+  <h1>ระบบจองห้องพักออนไลน์</h1>
+  <p>Hotel Booking System · Node.js · Express · React · SQLite · JWT · Demo</p>
+  <a class="hero-btn" href="#booking">จองห้องพักเลย →</a>
+</div>
+
+<!-- FEATURES -->
+<div class="features fadein">
+  <div class="feat"><div class="feat-icon">📋</div><div class="feat-title">ฟอร์มจองง่าย</div><div class="feat-desc">ลูกค้าจองห้องพักได้โดยไม่ต้อง Login รองรับ validation ทุกช่อง</div></div>
+  <div class="feat"><div class="feat-icon">🔐</div><div class="feat-title">JWT Authentication</div><div class="feat-desc">ระบบ Login/Logout ด้วย JSON Web Token พร้อม Protected Routes สำหรับ Admin</div></div>
+  <div class="feat"><div class="feat-icon">🗄️</div><div class="feat-title">SQLite Database</div><div class="feat-desc">จัดเก็บข้อมูล users และ bookings พร้อม bcrypt password hashing</div></div>
+  <div class="feat"><div class="feat-icon">⚡</div><div class="feat-title">REST API</div><div class="feat-desc">Node.js + Express 4 พร้อม CRUD endpoints ครบทุก HTTP method</div></div>
+  <div class="feat"><div class="feat-icon">🎨</div><div class="feat-title">React + Tailwind</div><div class="feat-desc">Frontend สร้างด้วย React Hooks, Context API และ Tailwind CSS</div></div>
+  <div class="feat"><div class="feat-icon">🛡️</div><div class="feat-title">ProtectedRoute</div><div class="feat-desc">ป้องกันหน้า Admin อัตโนมัติ redirect ไป Login เมื่อยังไม่เข้าสู่ระบบ</div></div>
+</div>
+
+<!-- BOOKING FORM SECTION -->
+<div id="booking">
+  <div class="booking-header">
+    <div class="sec-title">📅 จองห้องพัก</div>
+    <p style="color:var(--slate);margin-bottom:1.5rem;font-size:.9rem">ไม่จำเป็นต้องเข้าสู่ระบบ — กรอกข้อมูลแล้วกดจองได้เลย</p>
+  </div>
+
+  <div class="inner" style="padding-top:0">
+    <div class="form-card">
+      <div class="alert alert-err" id="book-err"></div>
+      <div class="alert alert-ok"  id="book-ok"></div>
+
+      <div class="form-grid">
+        <div class="fg full">
+          <label>ชื่อ-นามสกุล</label>
+          <input type="text" id="b-name" placeholder="สมชาย ใจดี" />
+        </div>
+        <div class="fg">
+          <label>อีเมล</label>
+          <input type="email" id="b-email" placeholder="example@email.com" />
+        </div>
+        <div class="fg">
+          <label>เบอร์โทรศัพท์</label>
+          <input type="tel" id="b-phone" placeholder="0812345678" maxlength="10" />
+        </div>
+        <div class="fg">
+          <label>วันเช็คอิน</label>
+          <input type="date" id="b-checkin" />
+        </div>
+        <div class="fg">
+          <label>วันเช็คเอาท์</label>
+          <input type="date" id="b-checkout" />
+        </div>
+        <div class="fg">
+          <label>ประเภทห้องพัก</label>
+          <select id="b-room" onchange="updateGuestMax()">
+            <option value="">เลือกประเภทห้อง</option>
+            <option value="standard">ห้องมาตรฐาน (สูงสุด 2 ท่าน)</option>
+            <option value="deluxe">ห้องดีลักซ์ (สูงสุด 3 ท่าน)</option>
+            <option value="suite">ห้องสวีท (สูงสุด 4 ท่าน)</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>จำนวนผู้เข้าพัก</label>
+          <input type="number" id="b-guests" value="1" min="1" max="4" />
+        </div>
+      </div>
+
+      <div class="summary-box" id="b-summary"></div>
+      <button class="btn btn-gold btn-full" onclick="submitBooking()">จองห้องพัก</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Confirm Booking -->
+<div class="overlay" id="modal-confirm">
+  <div class="modal fadein">
+    <div class="modal-title">ยืนยันการจอง</div>
+    <div class="confirm-box" id="confirm-body"></div>
+    <div class="btn-row">
+      <button class="btn btn-gold"  style="flex:1" onclick="confirmBook()">✓ ยืนยัน</button>
+      <button class="btn btn-ghost" style="flex:1" onclick="closeModal('modal-confirm')">ยกเลิก</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>🏨 The Grand Booking</span> · Hotel Booking System Demo · 2025<br/>
+  Node.js · Express · React · SQLite · JWT · Tailwind CSS
+</footer>
+
+<script src="shared.js"></script>
+<script>
+  // ── Navbar auth state ──
+  (function () {
+    const user = loadSession();
+    const wrap = document.getElementById('nav-auth');
+    if (user) {
+      wrap.innerHTML = `<a class="nav-btn" href="admin.html">สำหรับผู้ดูแล</a>
+                        <button class="nav-btn danger" onclick="doLogout()">ออกจากระบบ</button>`;
+    } else {
+      wrap.innerHTML = `<a class="nav-btn cta" href="login.html">เข้าสู่ระบบ</a>`;
+    }
+  })();
+
+  function doLogout() { clearSession(); location.reload(); }
+
+  // ── Set min dates ──
+  (function () {
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('b-checkin').min = today;
+    document.getElementById('b-checkout').min = today;
+  })();
+
+  // ── Booking logic ──
+  let pendingBooking = null;
+
+  function updateGuestMax() {
+    const room = val('b-room');
+    const inp = document.getElementById('b-guests');
+    if (room) { inp.max = maxGuests[room]; if (parseInt(inp.value) > parseInt(inp.max)) inp.value = inp.max; }
+    updateSummary();
+  }
+
+  document.getElementById('b-checkin').addEventListener('change', () => {
+    document.getElementById('b-checkout').min = val('b-checkin');
+    updateSummary();
+  });
+  document.getElementById('b-checkout').addEventListener('change', updateSummary);
+  document.getElementById('b-guests').addEventListener('change', updateSummary);
+
+  function updateSummary() {
+    const ci = val('b-checkin'), co = val('b-checkout'), room = val('b-room'), guests = val('b-guests');
+    const box = document.getElementById('b-summary');
+    if (ci && co && new Date(co) > new Date(ci)) {
+      const days = Math.ceil((new Date(co) - new Date(ci)) / 86400000);
+      box.innerHTML = `📅 จำนวน <strong>${days} คืน</strong>${room ? ' · ห้อง <strong>' + roomNames[room] + '</strong>' : ''} · ผู้เข้าพัก <strong>${guests} ท่าน</strong>`;
+      box.classList.add('show');
+    } else { box.classList.remove('show'); }
+  }
+
+  function submitBooking() {
+    showAlert('book-err', ''); showAlert('book-ok', '');
+    const name = val('b-name'), email = val('b-email'), phone = val('b-phone'),
+          ci = val('b-checkin'), co = val('b-checkout'), room = val('b-room'), guests = val('b-guests');
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+
+    if (!name || !email || !phone || !ci || !co || !room)
+      return showAlert('book-err', '⚠️ กรุณากรอกข้อมูลให้ครบทุกช่อง');
+    if (!/^[0-9]{10}$/.test(phone))
+      return showAlert('book-err', '⚠️ กรุณากรอกเบอร์โทรศัพท์ 10 หลัก');
+    if (new Date(ci) < today)
+      return showAlert('book-err', '⚠️ กรุณาเลือกวันเช็คอินที่ยังไม่ผ่านมา');
+    if (new Date(co) <= new Date(ci))
+      return showAlert('book-err', '⚠️ วันเช็คเอาท์ต้องมาหลังวันเช็คอิน');
+
+    const days = Math.ceil((new Date(co) - new Date(ci)) / 86400000);
+    pendingBooking = { fullname: name, email, phone, checkin: ci, checkout: co, roomtype: room, guests: parseInt(guests) };
+
+    document.getElementById('confirm-body').innerHTML =
+      `<div><strong>ชื่อ:</strong> ${esc(name)}</div>
+       <div><strong>อีเมล:</strong> ${esc(email)}</div>
+       <div><strong>โทร:</strong> ${esc(phone)}</div>
+       <div><strong>ห้อง:</strong> ${roomNames[room]}</div>
+       <div><strong>เช็คอิน:</strong> ${ci} → <strong>เช็คเอาท์:</strong> ${co}</div>
+       <div><strong>จำนวน:</strong> ${days} คืน · ${guests} ท่าน</div>`;
+    openModal('modal-confirm');
+  }
+
+  function confirmBook() {
+    syncBookings(); // โหลดจาก session ก่อน
+    const days = Math.ceil((new Date(pendingBooking.checkout) - new Date(pendingBooking.checkin)) / 86400000);
+    bookings.unshift({ id: nextId++, ...pendingBooking, status: 'pending', comment: '', created_at: new Date().toISOString().split('T')[0] });
+    saveBookings();
+    closeModal('modal-confirm');
+    showAlert('book-ok', `✅ จองห้องพักสำเร็จแล้ว! (จำนวน ${days} คืน)`, 'ok');
+    clearBookForm();
+    pendingBooking = null;
+  }
+
+  function clearBookForm() {
+    ['b-name','b-email','b-phone','b-checkin','b-checkout'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('b-guests').value = '1';
+    document.getElementById('b-room').value = '';
+    document.getElementById('b-summary').classList.remove('show');
+  }
+
+  // Close modal on overlay click
+  document.querySelectorAll('.overlay').forEach(o => {
+    o.addEventListener('click', e => { if (e.target === o) o.classList.remove('show'); });
+  });
+</script>
+</body>
+</html>

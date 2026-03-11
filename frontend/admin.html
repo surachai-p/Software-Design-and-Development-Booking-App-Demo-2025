@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Dashboard — Hotel Booking</title>
+<link rel="stylesheet" href="shared.css" />
+<style>
+  /* ── Dashboard ── */
+  .dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem; }
+  .welcome { color: var(--slate); font-size: .9rem; }
+  .welcome strong { color: var(--gold-d); }
+
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .stat { background: var(--char); color: #fff; border-radius: 8px; padding: 1.25rem; text-align: center; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); }
+  .stat-lbl { font-size: .72rem; color: #aaa; margin-top: .25rem; text-transform: uppercase; letter-spacing: .5px; }
+
+  .dash-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+  .dash-card {
+    background: var(--warm); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(44,44,44,.07);
+    cursor: pointer; transition: .2s; text-align: left; border-left: 4px solid var(--gold);
+    border-top: none; border-right: none; border-bottom: none;
+    border: 1px solid var(--border); border-left: 4px solid var(--gold);
+  }
+  .dash-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); border-left-color: var(--gold-d); }
+  .dash-card.dim { cursor: default; opacity: .5; pointer-events: none; }
+  .dash-card-icon { font-size: 1.75rem; margin-bottom: .5rem; }
+  .dash-card-title { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: .25rem; }
+  .dash-card-desc { color: var(--slate); font-size: .8rem; }
+
+  /* ── Views ── */
+  .view { display: none; }
+  .view.active { display: block; animation: fadeIn .3s ease; }
+
+  /* ── List header ── */
+  .list-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: .75rem; }
+
+  /* ── Section divider ── */
+  .breadcrumb { display: flex; align-items: center; gap: .5rem; color: var(--slate-l); font-size: .85rem; margin-bottom: 1.5rem; }
+  .breadcrumb a { color: var(--gold-d); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb span { color: var(--slate-l); }
+
+  /* ── Token info ── */
+  .token-box {
+    background: #1a1a2e; color: #7bc8a4; font-family: monospace; font-size: .75rem;
+    padding: .75rem 1rem; border-radius: 6px; margin-bottom: 1.5rem;
+    border: 1px solid #2d2d44; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .token-label { color: #aaa; font-family: 'DM Sans', sans-serif; font-size: .72rem; margin-bottom: .3rem; text-transform: uppercase; letter-spacing: .5px; }
+
+  @media (max-width: 640px) {
+    .stat-row { grid-template-columns: repeat(2, 1fr); }
+    .dash-cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="brand" href="index.html">🏨 The Grand Booking</a>
+  <div class="nav-links">
+    <a class="nav-btn" href="index.html">หน้าแรก</a>
+    <a class="nav-btn" href="index.html#booking">จองห้องพัก</a>
+    <a class="nav-btn active" href="admin.html">สำหรับผู้ดูแล</a>
+    <button class="nav-btn danger" onclick="doLogout()">ออกจากระบบ</button>
+  </div>
+</nav>
+
+<div class="inner fadein">
+
+  <!-- ══ VIEW: DASHBOARD ══ -->
+  <div class="view active" id="view-dash">
+    <div class="dash-header">
+      <div class="sec-title" style="margin-bottom:0;border-bottom:none;padding-bottom:0">Admin Dashboard</div>
+      <div class="welcome">ยินดีต้อนรับ: <strong id="dash-username"></strong> · <span id="dash-role" style="color:var(--slate-l)"></span></div>
+    </div>
+
+    <!-- Simulated JWT token display -->
+    <div class="token-label">🔑 JWT Token (จำลอง)</div>
+    <div class="token-box" id="token-display">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwOTkwMDAwMCwiZXhwIjoxNzA5OTAzNjAwfQ.mock_signature_xxx</div>
+
+    <!-- Stats -->
+    <div class="stat-row">
+      <div class="stat"><div class="stat-num" id="s-total">0</div><div class="stat-lbl">จองทั้งหมด</div></div>
+      <div class="stat"><div class="stat-num" id="s-std">0</div><div class="stat-lbl">ห้องมาตรฐาน</div></div>
+      <div class="stat"><div class="stat-num" id="s-dlx">0</div><div class="stat-lbl">ห้องดีลักซ์</div></div>
+      <div class="stat"><div class="stat-num" id="s-ste">0</div><div class="stat-lbl">ห้องสวีท</div></div>
+    </div>
+
+    <!-- Menu cards -->
+    <div class="dash-cards">
+      <div class="dash-card" onclick="showView('bookings')">
+        <div class="dash-card-icon">📋</div>
+        <div class="dash-card-title">จัดการการจอง</div>
+        <div class="dash-card-desc">ดู แก้ไข และลบข้อมูลการจอง</div>
+      </div>
+      <div class="dash-card dim">
+        <div class="dash-card-icon">🏨</div>
+        <div class="dash-card-title">จัดการห้องพัก</div>
+        <div class="dash-card-desc">จัดการข้อมูลห้องพักและประเภทห้อง</div>
+      </div>
+      <div class="dash-card dim">
+        <div class="dash-card-icon">📊</div>
+        <div class="dash-card-title">รายงาน</div>
+        <div class="dash-card-desc">สถิติและรายงานการจองห้องพัก</div>
+      </div>
+    </div>
+
+    <!-- API Info -->
+    <div class="sec-title" style="font-size:1.2rem">📡 API Endpoints (Reference)</div>
+    <table style="font-size:.82rem">
+      <thead>
+        <tr>
+          <th>Method</th><th>Endpoint</th><th>Auth</th><th>คำอธิบาย</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="badge b-dlx">POST</span></td><td><code>/api/login</code></td><td>❌</td><td>เข้าสู่ระบบ รับ JWT token</td></tr>
+        <tr><td><span class="badge b-dlx">POST</span></td><td><code>/api/bookings</code></td><td>❌</td><td>สร้างการจองใหม่</td></tr>
+        <tr><td><span class="badge b-std">GET</span></td><td><code>/api/bookings</code></td><td>✅</td><td>ดึงข้อมูลการจองทั้งหมด</td></tr>
+        <tr><td><span class="badge b-std">GET</span></td><td><code>/api/bookings/:id</code></td><td>✅</td><td>ดึงข้อมูลการจองตาม ID</td></tr>
+        <tr><td><span class="badge b-ste">PUT</span></td><td><code>/api/bookings/:id</code></td><td>✅</td><td>แก้ไขข้อมูลการจอง</td></tr>
+        <tr><td><span class="badge" style="background:#fde8e8;color:#c0392b">DELETE</span></td><td><code>/api/bookings/:id</code></td><td>✅</td><td>ลบข้อมูลการจอง</td></tr>
+        <tr><td><span class="badge b-std">GET</span></td><td><code>/api/users</code></td><td>✅</td><td>ดูรายการ users (ไม่แสดง password)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══ VIEW: BOOKING LIST ══ -->
+  <div class="view" id="view-bookings">
+    <div class="breadcrumb">
+      <a href="#" onclick="showView('dash')">Dashboard</a>
+      <span>›</span>
+      <span>รายการจองห้องพัก</span>
+    </div>
+
+    <div class="list-header">
+      <div class="sec-title" style="margin-bottom:0;border-bottom:none;padding-bottom:0">รายการจองห้องพัก</div>
+      <div class="btn-row">
+        <button class="btn btn-ghost" onclick="showView('dash')">← กลับ Dashboard</button>
+        <a class="btn btn-gold" href="index.html#booking">+ เพิ่มการจอง</a>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>ชื่อผู้จอง</th><th>อีเมล</th><th>ห้อง</th>
+            <th>เช็คอิน</th><th>เช็คเอาท์</th><th>ท่าน</th><th>สถานะ</th><th>จัดการ</th>
+          </tr>
+        </thead>
+        <tbody id="booking-tbody">
+          <tr><td colspan="9" style="text-align:center;padding:2rem;color:var(--slate-l)">กำลังโหลด...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /inner -->
+
+<!-- MODAL: Edit Booking -->
+<div class="overlay" id="modal-edit">
+  <div class="modal fadein">
+    <div class="modal-title">✏️ แก้ไขการจอง</div>
+    <input type="hidden" id="e-id" />
+    <div class="form-grid">
+      <div class="fg full">
+        <label>ชื่อ-นามสกุล</label>
+        <input type="text" id="e-name" />
+      </div>
+      <div class="fg">
+        <label>อีเมล</label>
+        <input type="email" id="e-email" />
+      </div>
+      <div class="fg">
+        <label>โทรศัพท์</label>
+        <input type="tel" id="e-phone" />
+      </div>
+      <div class="fg">
+        <label>เช็คอิน</label>
+        <input type="date" id="e-checkin" />
+      </div>
+      <div class="fg">
+        <label>เช็คเอาท์</label>
+        <input type="date" id="e-checkout" />
+      </div>
+      <div class="fg">
+        <label>ประเภทห้อง</label>
+        <select id="e-room">
+          <option value="standard">ห้องมาตรฐาน</option>
+          <option value="deluxe">ห้องดีลักซ์</option>
+          <option value="suite">ห้องสวีท</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>ผู้เข้าพัก</label>
+        <input type="number" id="e-guests" min="1" max="4" />
+      </div>
+      <div class="fg full">
+        <label>หมายเหตุ</label>
+        <input type="text" id="e-comment" placeholder="หมายเหตุเพิ่มเติม..." />
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-gold"  style="flex:1" onclick="saveEdit()">💾 บันทึก</button>
+      <button class="btn btn-ghost" style="flex:1" onclick="closeModal('modal-edit')">ยกเลิก</button>
+    </div>
+  </div>
+</div>
+
+<script src="shared.js"></script>
+<script>
+  // ── Auth Guard (Protected Route) ──
+  const currentUser = loadSession();
+  if (!currentUser) window.location.href = 'login.html';
+
+  // ── Init ──
+  syncBookings();
+  document.getElementById('dash-username').textContent = currentUser ? currentUser.username : '';
+  document.getElementById('dash-role').textContent = currentUser ? currentUser.role : '';
+  renderStats();
+
+  function doLogout() { clearSession(); window.location.href = 'index.html'; }
+
+  // ── View switching ──
+  function showView(name) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.getElementById('view-' + name).classList.add('active');
+    if (name === 'bookings') renderBookings();
+    if (name === 'dash') renderStats();
+    window.scrollTo(0, 0);
+  }
+
+  // ── Stats ──
+  function renderStats() {
+    syncBookings();
+    document.getElementById('s-total').textContent = bookings.length;
+    document.getElementById('s-std').textContent   = bookings.filter(b => b.roomtype === 'standard').length;
+    document.getElementById('s-dlx').textContent   = bookings.filter(b => b.roomtype === 'deluxe').length;
+    document.getElementById('s-ste').textContent   = bookings.filter(b => b.roomtype === 'suite').length;
+  }
+
+  // ── Booking table ──
+  const roomBadge = { standard: 'b-std', deluxe: 'b-dlx', suite: 'b-ste' };
+
+  function renderBookings() {
+    syncBookings();
+    const tbody = document.getElementById('booking-tbody');
+    if (!bookings.length) {
+      tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;padding:2rem;color:var(--slate-l)">ไม่พบข้อมูลการจอง</td></tr>';
+      return;
+    }
+    tbody.innerHTML = bookings.map(b => `
+      <tr>
+        <td style="color:var(--slate-l);font-weight:600">${b.id}</td>
+        <td>
+          <strong>${esc(b.fullname)}</strong>
+          ${b.comment ? `<div style="font-size:.72rem;color:var(--slate-l);font-style:italic">${esc(b.comment)}</div>` : ''}
+        </td>
+        <td style="color:var(--slate)">${esc(b.email)}</td>
+        <td><span class="badge ${roomBadge[b.roomtype]}">${roomNames[b.roomtype]}</span></td>
+        <td>${b.checkin}</td>
+        <td>${b.checkout}</td>
+        <td style="text-align:center">${b.guests}</td>
+        <td><span class="badge b-pend">${b.status}</span></td>
+        <td>
+          <div style="display:flex;gap:.4rem">
+            <button class="act-btn act-edit" onclick="openEdit(${b.id})">แก้ไข</button>
+            <button class="act-btn act-del"  onclick="deleteBooking(${b.id})">ลบ</button>
+          </div>
+        </td>
+      </tr>`).join('');
+  }
+
+  function deleteBooking(id) {
+    if (!confirm('ต้องการลบข้อมูลการจองนี้?')) return;
+    bookings = bookings.filter(b => b.id !== id);
+    saveBookings();
+    renderBookings();
+    renderStats();
+  }
+
+  // ── Edit modal ──
+  function openEdit(id) {
+    const b = bookings.find(x => x.id === id);
+    if (!b) return;
+    document.getElementById('e-id').value      = b.id;
+    document.getElementById('e-name').value    = b.fullname;
+    document.getElementById('e-email').value   = b.email;
+    document.getElementById('e-phone').value   = b.phone;
+    document.getElementById('e-checkin').value = b.checkin;
+    document.getElementById('e-checkout').value= b.checkout;
+    document.getElementById('e-room').value    = b.roomtype;
+    document.getElementById('e-guests').value  = b.guests;
+    document.getElementById('e-comment').value = b.comment || '';
+    openModal('modal-edit');
+  }
+
+  function saveEdit() {
+    const id = parseInt(document.getElementById('e-id').value);
+    const idx = bookings.findIndex(b => b.id === id);
+    if (idx === -1) return;
+    bookings[idx] = {
+      ...bookings[idx],
+      fullname: val('e-name'),   email:    val('e-email'),
+      phone:    val('e-phone'),  checkin:  val('e-checkin'),
+      checkout: val('e-checkout'), roomtype: val('e-room'),
+      guests:   parseInt(val('e-guests')), comment: val('e-comment'),
+    };
+    saveBookings();
+    closeModal('modal-edit');
+    renderBookings();
+    renderStats();
+  }
+
+  // Close modal on overlay click
+  document.querySelectorAll('.overlay').forEach(o => {
+    o.addEventListener('click', e => { if (e.target === o) o.classList.remove('show'); });
+  });
+</script>
+</body>
+</html>
