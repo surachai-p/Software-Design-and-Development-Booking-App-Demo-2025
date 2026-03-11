@@ -412,7 +412,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
 > แทรกรูปภาพที่นี่
-
+<img width="722" height="238" alt="image" src="https://github.com/user-attachments/assets/81ff25cf-6454-4836-84d8-4da67112ea42" />
 ---
 
 ## การทดลองที่ 2: การทดสอบ API ด้วย Postman
@@ -459,6 +459,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
 > แทรกรูปภาพที่นี่
+<img width="873" height="897" alt="image" src="https://github.com/user-attachments/assets/6ee7c787-0d4c-4b60-bfc6-44c46ca87dbe" />
 
 ---
 
@@ -491,6 +492,9 @@ Headers: Content-Type: application/json
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
 > แทรกรูปภาพที่นี่
+<img width="900" height="894" alt="image" src="https://github.com/user-attachments/assets/66611fb5-9b12-4551-b80e-d4c113de9ab4" />
+<img width="895" height="883" alt="image" src="https://github.com/user-attachments/assets/5e485a86-fd02-4d8c-8117-3845b42a797f" />
+<img width="887" height="880" alt="image" src="https://github.com/user-attachments/assets/738b4c97-208d-4a00-88df-154f38f19da8" />
 
 ---
 
@@ -507,6 +511,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
 > แทรกรูปภาพที่นี่
+<img width="932" height="813" alt="image" src="https://github.com/user-attachments/assets/7b5593e3-8f9e-400f-a67d-ce347990f777" />
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -523,6 +528,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
 > แทรกรูปภาพที่นี่
+<img width="861" height="868" alt="image" src="https://github.com/user-attachments/assets/1c87d8fa-fbc3-433b-988f-fb842dd39c2c" />
 
 ---
 
@@ -551,6 +557,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
 > แทรกรูปภาพที่นี่
+<img width="851" height="852" alt="image" src="https://github.com/user-attachments/assets/dd554c46-3964-4f87-bf57-c7906f145406" />
 
 ---
 
@@ -565,6 +572,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
 > แทรกรูปภาพที่นี่
+<img width="892" height="970" alt="image" src="https://github.com/user-attachments/assets/1a9dd648-9d9e-4171-9a03-32f6d2609983" />
 
 ---
 
@@ -676,7 +684,7 @@ npm run dev
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
 > แทรกรูปภาพที่นี่
-
+<img width="1910" height="1031" alt="image" src="https://github.com/user-attachments/assets/6c6ca9cc-f198-4bef-8ca5-143eb6b89f6e" />
 ---
 
 ### 3.2 การสร้าง Components
@@ -1348,6 +1356,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
 > แทรกรูปภาพที่นี่
+<img width="778" height="890" alt="image" src="https://github.com/user-attachments/assets/6c255be0-b082-4daf-abf9-29a5c2fd233d" />
 
 ---
 
@@ -1360,6 +1369,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
 > แทรกรูปภาพที่นี่
+<img width="1911" height="917" alt="image" src="https://github.com/user-attachments/assets/9eaa9435-4e53-4059-8afb-a4e69810baec" />
 
 ---
 
@@ -1373,10 +1383,12 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
 > แทรกรูปภาพที่นี่
+<img width="1916" height="920" alt="image" src="https://github.com/user-attachments/assets/afe94aca-8d3e-4b53-a35e-ce3908418a4c" />
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
 > แทรกรูปภาพที่นี่
+<img width="730" height="944" alt="image" src="https://github.com/user-attachments/assets/f6a54b54-6509-4fd3-a221-b2b2f2c62482" />
 
 ---
 
@@ -1388,6 +1400,7 @@ export default App;
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
 > แทรกรูปภาพที่นี่
+<img width="1880" height="918" alt="image" src="https://github.com/user-attachments/assets/d83299e1-fa3e-4641-b5ef-3a2b740a5f2b" />
 
 ---
 
@@ -1431,19 +1444,47 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+Axios คือ Library ภายนอก (Third-party) ที่ใช้สำหรับส่ง HTTP Requests (เช่น GET, POST, PUT, DELETE) เพื่อคุยกับ Backend API หรือดึงข้อมูลจาก Server โดยเขียนอยู่ในรูปแบบของ Promise-based ซึ่งสามารถใช้งานได้ทั้งบน Browser (Frontend) และ Node.js (Backend)
+
+ความแตกต่างระหว่าง axios และ fetch
+แม้ว่าทั้งคู่จะทำงานแบบ Promise-based และใช้ดึงข้อมูลได้เหมือนกัน แต่ Axios จะมีฟีเจอร์ที่ช่วยลดขั้นตอนการเขียนโค้ดและจัดการข้อผิดพลาดได้ง่ายกว่า fetch ที่เป็นเครื่องมือพื้นฐานที่ติดมากับ JavaScript
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+เพื่อรอให้ระบบตรวจสอบสถานะการ Login ให้เสร็จสมบูรณ์ก่อนที่จะตัดสินใจว่าจะให้ผู้ใช้เข้าถึงหน้านั้น หรือจะเตะกลับไปหน้า Login 
+
+การตรวจสอบว่าผู้ใช้ Login อยู่หรือไม่ (เช่น การไปอ่าน JWT Token จาก localStorage หรือการส่ง Request ไปถาม Backend ว่า Token นี้ยังไม่หมดอายุใช่ไหม) เป็นกระบวนการที่ต้องใช้เวลา (Asynchronous) ในขณะที่ React นั้นทำการสร้างหน้าเว็บ (Render) เร็วมาก หากเราไม่เขียน loading state มาคั่นไว้ จะเกิดเหตุการณ์ที่เรียกว่า "Premature Redirect" (การเด้งกลับก่อนกำหนด)  ซึ่งกระบวนการจะเป็นดังนี้:
+
+React เรนเดอร์ทันที: เมื่อผู้ใช้รีเฟรชหน้าเว็บ หรือกดเข้ามาในหน้า Protected (เช่น หน้าจัดการการจอง) Component ProtectedRoute จะทำงานทันที
+
+ข้อมูลยังมาไม่ถึง: ในเสี้ยววินาทีนั้น ฟังก์ชันที่ไปดึงข้อมูลผู้ใช้หรือตรวจสอบ Token ยังทำงานไม่เสร็จ ตัวแปรที่เก็บข้อมูล user จึงยังคงมีค่าเป็น null หรือว่างเปล่าอยู่
+
+โดนเตะออกโดยไม่ตั้งใจ: โลจิกของ ProtectedRoute เห็นว่า user เป็น null จึงเข้าใจผิดว่า "อ๋อ คนนี้ยังไม่ได้ Login" และจะทำการสั่ง Redirect ผู้ใช้เด้งกลับไปที่หน้า /login ทันที
+
+ถึงแม้จะ Login ถูกต้องแล้วก็ตาม: แม้ว่าหลังจากนั้นอีกเสี้ยววินาที การตรวจสอบ Token จะเสร็จสมบูรณ์ และพบว่าผู้ใช้คนนี้ Login ไว้แล้วจริงๆ แต่ก็สายไปแล้วครับ เพราะระบบได้เปลี่ยนหน้าไปเรียบร้อยแล้ว (บางครั้งอาจเห็นหน้าเว็บกระพริบแวบหนึ่งแล้วเด้งไปหน้า Login)
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+ความเสี่ยงหลักคือการตกเป็นเป้าหมายของการโจมตีที่เรียกว่า XSS (Cross-Site Scripting) ครับ
+
+JavaScript เข้าถึงได้ง่าย: localStorage ถูกออกแบบมาให้โค้ด JavaScript ฝั่ง Frontend สามารถอ่านและเขียนข้อมูลได้อย่างอิสระผ่านคำสั่งง่ายๆ อย่าง localStorage.getItem('token')
+
+ช่องโหว่จากการแทรกโค้ดอันตราย: หากเว็บไซต์ของคุณมีจุดอ่อนที่ยอมให้แฮกเกอร์ฝังโค้ด JavaScript ของตัวเองลงมาแสดงผลบนหน้าเว็บได้ (เช่น การพิมพ์สคริปต์ลงในช่องคอมเมนต์ที่ไม่มีการคัดกรอง หรือการใช้ Library ภายนอกที่ถูกฝังมัลแวร์)
+
+การขโมย Token (Token Theft): สคริปต์ของแฮกเกอร์จะทำงานบนเบราว์เซอร์ของผู้ใช้ และสามารถแอบดึง JWT ออกจาก localStorage เพื่อส่งกลับไปยังเซิร์ฟเวอร์ของแฮกเกอร์ได้ทันที ทำให้แฮกเกอร์สวมรอยเป็นผู้ใช้คนนั้น (Account Takeover) ได้อย่างสมบูรณ์
+
+วิธีที่ดีและปลอดภัยกว่า: การใช้ HttpOnly Cookies
+วิธีที่เป็นมาตรฐานความปลอดภัย (Best Practice) ในปัจจุบัน คือการให้ Backend ส่ง JWT กลับมาในรูปแบบของ Cookies แทนการส่งเป็น JSON ธรรมดา โดยต้องตั้งค่าสถานะ (Flag) พิเศษที่เรียกว่า HttpOnly ครับ
+
+ป้องกันการอ่านด้วยโค้ด (HttpOnly): เมื่อตั้งค่านี้ เบราว์เซอร์จะไม่อนุญาตให้โค้ด JavaScript ใดๆ (รวมถึงโค้ดของแฮกเกอร์) เข้าถึง Cookie ตัวนี้ได้เลย ปิดประตูการโจมตีแบบ XSS ในการขโมย Token ได้อย่างเด็ดขาด
+
+ส่งข้อมูลแบบเข้ารหัส (Secure): มักใช้คู่กับแฟล็ก Secure เพื่อบังคับให้เบราว์เซอร์ส่ง Cookie ตัวนี้ผ่านการเชื่อมต่อ HTTPS เท่านั้น
+
+ทำงานอัตโนมัติ: เบราว์เซอร์จะจัดการแนบ Cookie นี้ไปกับทุกๆ HTTP Request ที่ส่งไปยัง Backend ให้เองโดยอัตโนมัติ ทำให้ไม่ต้องเขียนโค้ดดึง Token มาใส่ใน Header (Authorization: Bearer...) แบบแมนนวลอีกต่อไป
 ```
 
 
