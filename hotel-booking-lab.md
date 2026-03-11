@@ -412,6 +412,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
 > แทรกรูปภาพที่นี่
+<img width="744" height="252" alt="image" src="https://github.com/user-attachments/assets/2cc10fac-c10e-44e5-88c1-a4d396faf875" />
 
 ---
 
@@ -459,6 +460,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
 > แทรกรูปภาพที่นี่
+<img width="1168" height="454" alt="image" src="https://github.com/user-attachments/assets/89cb6be6-4fc4-4cb3-a98d-57765274d49c" />
 
 ---
 
@@ -491,6 +493,10 @@ Headers: Content-Type: application/json
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
 > แทรกรูปภาพที่นี่
+<img width="927" height="497" alt="image" src="https://github.com/user-attachments/assets/1a2d4652-ad01-4d13-90da-835c536352e1" />
+<img width="786" height="482" alt="image" src="https://github.com/user-attachments/assets/8a08bba4-a8e1-4117-884d-bba2485c3000" />
+<img width="683" height="487" alt="image" src="https://github.com/user-attachments/assets/9fcc43dc-97d7-4afd-8818-09c986d5118c" />
+
 
 ---
 
@@ -507,6 +513,8 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
 > แทรกรูปภาพที่นี่
+<img width="807" height="506" alt="image" src="https://github.com/user-attachments/assets/60ec8e41-5657-49f5-85e1-9b1dc7150e6b" />
+<img width="1160" height="997" alt="image" src="https://github.com/user-attachments/assets/664ba94a-51c0-4576-97de-2cae970ea4ff" />
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -523,6 +531,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
 > แทรกรูปภาพที่นี่
+<img width="772" height="482" alt="image" src="https://github.com/user-attachments/assets/9177b771-3ecc-4318-a85b-a0d632e8768c" />
 
 ---
 
@@ -551,6 +560,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
 > แทรกรูปภาพที่นี่
+<img width="935" height="472" alt="image" src="https://github.com/user-attachments/assets/f0052dd0-9e0a-41c1-b7c8-76db5f1876c9" />
 
 ---
 
@@ -565,6 +575,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
 > แทรกรูปภาพที่นี่
+<img width="591" height="166" alt="image" src="https://github.com/user-attachments/assets/3873fc07-877a-42c3-b2a7-d9f4888c63c9" />
 
 ---
 
@@ -576,6 +587,7 @@ Headers: Authorization: Bearer {{token}}
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
 > แทรกรูปภาพที่นี่
+<img width="1187" height="263" alt="image" src="https://github.com/user-attachments/assets/08f34b17-0586-41da-a879-6be37551c4f6" />
 
 ---
 
@@ -674,6 +686,7 @@ npm run dev
 ```
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
+<img width="1820" height="419" alt="image" src="https://github.com/user-attachments/assets/c20d3d2b-490c-400f-9f89-6b10785076d3" />
 
 > แทรกรูปภาพที่นี่
 
