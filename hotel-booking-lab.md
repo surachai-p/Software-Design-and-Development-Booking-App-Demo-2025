@@ -461,7 +461,7 @@ Server running on port 3001
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\2.png](../images/2.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\2.png](images/2.png)
 ---
 
 ### 2.3 การทดสอบ CRUD Operations
@@ -494,11 +494,11 @@ Headers: Content-Type: application/json
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\3-2.png](../images/3-2.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\3-2.png](images/3-2.png)
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\3-1.png](../images/3-1.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\3-1.png](images/3-1.png)
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\3-3.png](../images/3-3.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\3-3.png](images/3-3.png)
 ---
 
 #### 2.3.2 ดึงข้อมูลทั้งหมด (GET All)
@@ -515,7 +515,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\4.png](../images/4.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\4.png](images/4.png)
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -533,7 +533,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\5.png](../images/5.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\5.png](images/5.png)
 ---
 
 #### 2.3.4 แก้ไขข้อมูลการจอง (PUT)
@@ -562,7 +562,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\6.png](../images/6.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\6.png](images/6.png)
 ---
 
 #### 2.3.5 ลบข้อมูลการจอง (DELETE)
@@ -577,7 +577,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\7.png](../images/7.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\7.png](images/7.png)
 ---
 
 ### 🔧 งานปรับปรุงโค้ด
@@ -589,9 +589,9 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\8-1.png](../images/8-1.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\8-1.png](images/8-1.png)
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\8-2.png](../images/8-2.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\8-2.png](images/8-2.png)
 ---
 
 ## การทดลองที่ 3: การพัฒนา Frontend ด้วย React
@@ -692,9 +692,9 @@ npm run dev
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\9-1.png](../images/9-1.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\9-1.png](images/9-1.png)
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\9-2.png](../images/9-2.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\9-2.png](images/9-2.png)
 ---
 
 ### 3.2 การสร้าง Components
@@ -1367,9 +1367,9 @@ export default App;
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\10-2.png](../images/10-2.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\10-2.png](images/10-2.png)
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\10-1.png](../images/10-1.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\10-1.png](images/10-1.png)
 ---
 
 #### 3.3.2 ทดสอบการ Login ระบบ Admin
@@ -1382,9 +1382,9 @@ export default App;
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\11-1.png](../images/11-1.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\11-1.png](images/11-1.png)
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\11-2.png](../images/11-2.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\11-2.png](images/11-2.png)
 ---
 
 #### 3.3.3 ทดสอบการจัดการรายการจอง
@@ -1398,12 +1398,12 @@ export default App;
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\12-1.png](../images/12-1.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\12-1.png](images/12-1.png)
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\12-2.png](../images/12-2.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\12-2.png](images/12-2.png)
 ---
 
 #### 3.3.4 ทดสอบการ Logout และ Protected Route
@@ -1415,7 +1415,7 @@ export default App;
 
 > แทรกรูปภาพที่นี่
 
-![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\13.png](../images/13.png)
+![C:\Users\TAEGAZYX\Desktop\hotel-booking-system\images\13.png](images/13.png)
 ---
 
 ## สรุปสถาปัตยกรรมระบบ
