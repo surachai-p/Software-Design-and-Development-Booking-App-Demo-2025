@@ -412,6 +412,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
 > แทรกรูปภาพที่นี่
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b3c1ea40-b9c0-424e-8d51-4428c594427d" />
 
 ---
 
@@ -459,6 +460,7 @@ Server running on port 3001
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
 > แทรกรูปภาพที่นี่
+<img width="1914" height="1011" alt="image" src="https://github.com/user-attachments/assets/cbc58294-71e8-42c7-81da-06bed3bafeb5" />
 
 ---
 
@@ -489,6 +491,10 @@ Headers: Content-Type: application/json
 **ทำการเพิ่มข้อมูลอีก 2 รายการ** โดยเปลี่ยนแปลงข้อมูลในแต่ละครั้ง
 
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/3fc4248b-2723-4af8-a2c1-e0a7b156fb98" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/954986b4-3d9b-48da-9dbb-e90d9726d936" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/da0c1dd8-94aa-4aa6-8ef4-be31be04be04" />
+
 
 > แทรกรูปภาพที่นี่
 
@@ -506,7 +512,10 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
-> แทรกรูปภาพที่นี่
+> <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/d6228e82-89da-4cb8-b42b-cfc68cdce3fd" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/391fa5f0-204b-46cf-a9a1-19dd39087d69" />
+
+
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -522,7 +531,8 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
-> แทรกรูปภาพที่นี่
+> <img width="1916" height="1015" alt="image" src="https://github.com/user-attachments/assets/e410907f-97ff-4185-8c7b-7da51743a44e" />
+
 
 ---
 
@@ -550,7 +560,8 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
-> แทรกรูปภาพที่นี่
+> <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/987a888d-355b-478a-bcff-5abd7199ad57" />
+
 
 ---
 
