@@ -403,7 +403,7 @@ npm run dev
 
 ผลลัพธ์ที่ควรเห็น:
 
-```
+```![alt text](image.png)
 [nodemon] starting `node server.js`
 เชื่อมต่อฐานข้อมูลสำเร็จ
 Server running on port 3001
@@ -411,7 +411,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
-> แทรกรูปภาพที่นี่
+> แทรกรูปภาพที่นี่ ![alt text](image2.png)
 
 ---
 
