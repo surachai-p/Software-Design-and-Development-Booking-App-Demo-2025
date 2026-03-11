@@ -411,7 +411,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
 
-> แทรกรูปภาพที่นี่
+> ![runserver](image/runserver.png)
 
 ---
 
@@ -458,7 +458,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
-> แทรกรูปภาพที่นี่
+> ![testlogin](image/testlogin.png)
 
 ---
 
@@ -490,7 +490,9 @@ Headers: Content-Type: application/json
 
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
-> แทรกรูปภาพที่นี่
+> ![CRUD1](image/CRUD1.png)
+![CRUD2](image/CRUD2.png)
+![CRUD3](image/CRUD3.png)
 
 ---
 
@@ -508,7 +510,7 @@ Headers: Authorization: Bearer {{token}}
 
 > แทรกรูปภาพที่นี่
 
-> ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
+> ![getAll](image/getAll.png)
 
 ---
 
@@ -522,7 +524,8 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
-> แทรกรูปภาพที่นี่
+> ![getbyID1](image/getbyID1.png)
+![getbyID2](image/getbyID2.png)
 
 ---
 
@@ -550,7 +553,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
-> แทรกรูปภาพที่นี่
+> ![updateBooking](image/updateBooking.png)
 
 ---
 
@@ -564,7 +567,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
-> แทรกรูปภาพที่นี่
+> ![deleteBooking](image/deleteBooking.png)
 
 ---
 
@@ -575,8 +578,8 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
 
-> แทรกรูปภาพที่นี่
-
+> ![delete_with_customer](image/delete-with_customer.png)
+![getUser](image/get.png)
 ---
 
 ## การทดลองที่ 3: การพัฒนา Frontend ด้วย React
@@ -675,7 +678,7 @@ npm run dev
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
-> แทรกรูปภาพที่นี่
+>![run_vite](image/run_vite.png)
 
 ---
 
@@ -1347,7 +1350,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
-> แทรกรูปภาพที่นี่
+> ![confirm_booking](image/confirm_booking.png)
 
 ---
 
@@ -1359,7 +1362,8 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
-> แทรกรูปภาพที่นี่
+> > ![login](image/login.png)
+> ![admin](image/admin.png)
 
 ---
 
@@ -1372,12 +1376,11 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
-> แทรกรูปภาพที่นี่
+>![manageroom](image/manageroom.png)
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
-> แทรกรูปภาพที่นี่
-
+> ![admin_edit_booking](image/admin_edit_booking.png)
 ---
 
 #### 3.3.4 ทดสอบการ Logout และ Protected Route
@@ -1387,7 +1390,8 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
-> แทรกรูปภาพที่นี่
+> ![logout](image/logout.png)
+> ![access_admin](image/access_admin.png)
 
 ---
 
@@ -1431,19 +1435,31 @@ hotel-booking-system/
 **คำถามที่ 1:** `axios` คืออะไร และต่างจาก `fetch` ของ JavaScript อย่างไร?
 
 ```
-เขียนคำตอบที่นี่
+axios คือ library สำหรับใช้ส่ง HTTP request เช่น GET, POST, PUT, DELETE เพื่อสื่อสารกับ API ระหว่าง frontend และ backend
+ความแตกต่างระหว่าง axios กับ fetch คือ
+1. axios แปลงข้อมูล JSON ให้อัตโนมัติ ส่วน fetch ต้องใช้ .json() เอง
+2. axios สามารถจัดการ error ได้ง่ายกว่า ในขณะที่ fetch ต้องตรวจสอบ response status เอง
+3. axios สามารถตั้งค่า header หรือ baseURL ได้ง่าย เช่น การใส่ JWT token
+4. axios มี interceptor สำหรับดัก request และ response ก่อนส่งหรือก่อนรับ
+5. fetch เป็นฟังก์ชันที่มีอยู่ใน JavaScript อยู่แล้ว ไม่ต้องติดตั้งเพิ่ม ส่วน axios ต้องติดตั้งผ่าน npm
 ```
 
 **คำถามที่ 2:** เหตุใด `ProtectedRoute` จึงต้องตรวจสอบ `loading` state ก่อน ถ้าไม่ตรวจสอบจะเกิดอะไรขึ้น?
 
 ```
-เขียนคำตอบที่นี่
+ProtectedRoute ต้องตรวจสอบ loading state ก่อน เพราะในช่วงที่แอปกำลังตรวจสอบข้อมูลผู้ใช้หรือ token จาก localStorage ระบบอาจยังไม่รู้ว่าผู้ใช้ login หรือยัง
+
+ถ้าไม่ตรวจสอบ loading state อาจเกิดการ redirect ไปหน้า login ทันที ทั้งที่ผู้ใช้มี token อยู่แล้ว ทำให้เกิดการเปลี่ยนหน้าไปมา (redirect loop) หรือเกิดการแสดงหน้าที่ผิดพลาดชั่วคราว
+
+ดังนั้น loading state จะช่วยให้ระบบรอจนกว่าจะตรวจสอบสถานะการ login เสร็จก่อน แล้วจึงตัดสินใจว่าจะให้เข้าหน้าหรือ redirect ไปหน้า login
 ```
 
 **คำถามที่ 3:** `localStorage` ที่ใช้เก็บ JWT token มีความเสี่ยงด้านความปลอดภัยอย่างไร และมีวิธีอื่นที่ดีกว่าหรือไม่?
 
 ```
-เขียนคำตอบที่นี่
+การเก็บ JWT token ใน localStorage มีความเสี่ยงจากการโจมตีแบบ Cross-Site Scripting (XSS) เพราะถ้ามี script ที่เป็นอันตรายถูกฝังในเว็บไซต์ script นั้นสามารถเข้าถึง token ใน localStorage และนำไปใช้แอบอ้างเป็นผู้ใช้ได้
+
+วิธีที่ปลอดภัยกว่าคือการเก็บ token ใน HttpOnly Cookie ซึ่ง JavaScript ไม่สามารถเข้าถึงได้ ทำให้ลดความเสี่ยงจาก XSS และสามารถใช้ร่วมกับ Secure และ SameSite เพื่อเพิ่มความปลอดภัยในการส่งข้อมูลระหว่าง client และ server
 ```
 
 
@@ -1459,3 +1475,4 @@ hotel-booking-system/
 
 ---
 
+นี่
