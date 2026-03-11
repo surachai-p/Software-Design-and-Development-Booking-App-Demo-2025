@@ -686,7 +686,7 @@ npm run dev
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
-> แทรกรูปภาพที่นี่
+> <img width="1910" height="1031" alt="image" src="https://github.com/user-attachments/assets/6c6ca9cc-f198-4bef-8ca5-143eb6b89f6e" />
 
 ---
 
@@ -1358,8 +1358,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้าฟอร์มจองห้องพักและหน้าสรุปการจอง
 
-> แทรกรูปภาพที่นี่
-
+> <img width="1090" height="938" alt="image" src="https://github.com/user-attachments/assets/61c4147d-caf0-4fef-bf9a-4423a74a14d0" />
 ---
 
 #### 3.3.2 ทดสอบการ Login ระบบ Admin
@@ -1370,8 +1369,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้า Login และ AdminDashboard หลัง Login สำเร็จ
 
-> แทรกรูปภาพที่นี่
-
+> <img width="1910" height="920" alt="image" src="https://github.com/user-attachments/assets/0e5a2f73-c2ad-4ef3-9887-417ad704402a" />
 ---
 
 #### 3.3.3 ทดสอบการจัดการรายการจอง
@@ -1383,11 +1381,11 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
-> แทรกรูปภาพที่นี่
+> <img width="1910" height="920" alt="image" src="https://github.com/user-attachments/assets/0e5a2f73-c2ad-4ef3-9887-417ad704402a" />
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
-> แทรกรูปภาพที่นี่
+> <img width="780" height="940" alt="image" src="https://github.com/user-attachments/assets/3220a65f-7ee0-4a3d-ade8-8768a714185d" />
 
 ---
 
@@ -1398,7 +1396,7 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
 
-> แทรกรูปภาพที่นี่
+> <img width="1749" height="913" alt="image" src="https://github.com/user-attachments/assets/ba6ccbb0-5cc0-40c7-a299-606cd6a0f63b" />
 
 ---
 
