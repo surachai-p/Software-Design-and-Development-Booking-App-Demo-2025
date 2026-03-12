@@ -410,8 +410,7 @@ Server running on port 3001
 ```
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Backend Server
-
-> แทรกรูปภาพที่นี่
+![alt text](image-2.png)
 
 ---
 
@@ -458,7 +457,7 @@ Server running on port 3001
 
 ### 📸 บันทึกผลการทดลอง: ผลการทดสอบ Login และ Token
 
-> แทรกรูปภาพที่นี่
+![alt text](image.png)
 
 ---
 
@@ -490,7 +489,7 @@ Headers: Content-Type: application/json
 
 ### 📸 บันทึกผลการทดลอง: ผลการเพิ่มข้อมูลการจอง (POST) 3 รายการ
 
-> แทรกรูปภาพที่นี่
+![alt text](image-1.png)
 
 ---
 
@@ -506,7 +505,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลทั้งหมด
 
-> แทรกรูปภาพที่นี่
+![alt text](image-3.png)
 
 > ⚠️ หาก response แจ้ง `"Token ไม่ถูกต้องหรือหมดอายุ"` ให้ Login ใหม่แล้วอัปเดต token ใน Globals
 
@@ -522,7 +521,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการ GET ข้อมูลโดยระบุ ID
 
-> แทรกรูปภาพที่นี่
+![alt text](image-4.png)
 
 ---
 
@@ -550,7 +549,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการแก้ไขข้อมูล (PUT) — ต้องเห็น comment ที่ไม่เป็น null
 
-> แทรกรูปภาพที่นี่
+![alt text](image-5.png)
 
 ---
 
@@ -564,7 +563,7 @@ Headers: Authorization: Bearer {{token}}
 
 ### 📸 บันทึกผลการทดลอง: ผลการลบข้อมูล (DELETE)
 
-> แทรกรูปภาพที่นี่
+![alt text](image-6.png)
 
 ---
 
@@ -574,8 +573,8 @@ Headers: Authorization: Bearer {{token}}
 2. เพิ่ม endpoint `GET /api/users` (ต้อง `authenticateToken`) เพื่อดูรายการ user ทั้งหมด **โดยไม่แสดง password**
 
 ### 📸 บันทึกผลการทดลอง: ผลการ DELETE with custom status และ GET /api/users
-
-> แทรกรูปภาพที่นี่
+![alt text](image-7.png)
+![alt text](image-8.png)
 
 ---
 
@@ -675,7 +674,7 @@ npm run dev
 
 ### 📸 บันทึกผลการทดลอง: ผลการรัน Frontend เริ่มต้น
 
-> แทรกรูปภาพที่นี่
+![alt text](image-9.png)
 
 ---
 
@@ -1372,11 +1371,12 @@ export default App;
 
 ### 📸 บันทึกผลการทดลอง: หน้ารายการจองห้องพัก
 
-> แทรกรูปภาพที่นี่
+![alt text](image-11.png)
 
 ### 📸 บันทึกผลการทดลอง: หน้าแก้ไขข้อมูลการจอง
 
-> แทรกรูปภาพที่นี่
+
+![alt text](image-10.png)
 
 ---
 
@@ -1386,8 +1386,7 @@ export default App;
 2. ลอง access `/admin` โดยตรง — ต้องถูก redirect ไปหน้า Login อัตโนมัติ
 
 ### 📸 บันทึกผลการทดลอง: การทดสอบ Logout และ Protected Route
-
-> แทรกรูปภาพที่นี่
+![alt text](image-12.png)
 
 ---
 
